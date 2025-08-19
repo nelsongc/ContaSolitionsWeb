@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Conta Solutions</title>
+    <meta name="description" content="Política de privacidad y protección de datos para las aplicaciones móviles de la plataforma SISGES® de Conta Solutions.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #ecf0f1;
+            text-decoration: none;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Main Content */
+        main {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .document-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .document-title {
+            font-size: 2.5rem;
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+        
+        .last-updated {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .toc h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+        }
+        
+        .toc ol {
+            margin-left: 1rem;
+        }
+        
+        .toc li {
+            margin: 0.5rem 0;
+        }
+        
+        .toc a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin: 3rem 0;
+        }
+        
+        .section h2 {
+            color: #27ae60;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .section h3 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+        }
+        
+        .section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .section ul, .section ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        .section li {
+            margin: 0.5rem 0;
+        }
+        
+        /* Data type sections */
+        .data-section {
+            background: #e8f5e8;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .data-section h4 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* App-specific sections */
+        .app-privacy {
+            background: #f0f8ff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .app-privacy h4 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Rights sections */
+        .rights-section {
+            background: #fff3e0;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .rights-section h4 {
+            color: #ff9800;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            background: #e3f2fd;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .contact-info h3 {
+            color: #2196f3;
+            margin-bottom: 1rem;
+        }
+        
+        /* Security boxes */
+        .security-box {
+            background: #f3e5f5;
+            border: 1px solid #e1bee7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #9c27b0;
+        }
+        
+        .security-box h4 {
+            color: #7b1fa2;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Warning boxes */
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #f1c40f;
+        }
+        
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #27ae60;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                margin: 1rem 0;
+                padding: 2rem 1rem;
+            }
+            
+            .document-title {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CONTA SOLUTIONS</div>
+            <div style="opacity: 0.9; margin-top: 0.5rem;">🔒 Protección de Datos y Privacidad</div>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="document-header">
+                <h1 class="document-title">Política de Privacidad</h1>
+                <p class="last-updated">Última actualización: Agosto 2025</p>
+                <p style="margin-top: 1rem; color: #666;">
+                    Aplicable a todas las aplicaciones de la plataforma <strong>SISGES®</strong>: actuales y futuras
+                </p>
+                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">
+                    Incluye: <strong>Gastos</strong>, <strong>Nombres</strong>, <strong>Conteo</strong> y próximas aplicaciones de la suite empresarial
+                </p>
+            </div>
+
+            <div class="toc">
+                <h3>🔍 Tabla de Contenidos</h3>
+                <ol>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#responsable">Responsable del Tratamiento</a></li>
+                    <li><a href="#datos-recopilamos">Datos que Recopilamos</a></li>
+                    <li><a href="#como-recopilamos">Cómo Recopilamos los Datos</a></li>
+                    <li><a href="#uso-datos">Uso de los Datos</a></li>
+                    <li><a href="#almacenamiento">Almacenamiento y Seguridad</a></li>
+                    <li><a href="#compartir-datos">Compartir Datos con Terceros</a></li>
+                    <li><a href="#retencion">Retención de Datos</a></li>
+                    <li><a href="#derechos">Sus Derechos de Privacidad</a></li>
+                    <li><a href="#apps-especificas">Privacidad por Aplicación</a></li>
+                    <li><a href="#menores">Menores de Edad</a></li>
+                    <li><a href="#cambios">Cambios en esta Política</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ol>
+            </div>
+
+            <section id="introduccion" class="section">
+                <h2>1. Introducción</h2>
+                <p>
+                    En <strong>Conta Solutions</strong>, su privacidad es nuestra prioridad. Esta política explica 
+                    de manera clara y transparente cómo manejamos su información en todas nuestras aplicaciones 
+                    de la plataforma empresarial <strong>SISGES®</strong>, tanto las actuales como las futuras.
+                </p>
+                
+                <h3>🎯 Lo Más Importante (Resumen Ejecutivo):</h3>
+                <div style="background: #e8f5e8; padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                    <ul style="margin: 0; list-style: none;">
+                        <li style="margin: 0.5rem 0;">✅ <strong>NO recopilamos información personal identificable</strong></li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>Sus datos se almacenan localmente</strong> en su dispositivo</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>NO vendemos sus datos</strong> a terceros</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>Usted tiene control total</strong> sobre su información</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>Misma política</strong> para todas las apps SISGES®</li>
+                    </ul>
+                </div>
+                
+                <div class="security-box">
+                    <h4>🛡️ Filosofía de Privacidad</h4>
+                    <p>
+                        Creemos que sus datos empresariales son <strong>SUS datos</strong>. Nuestra tecnología 
+                        está diseñada para maximizar su privacidad y minimizar la recopilación de información, 
+                        manteniendo todas las funcionalidades que necesita.
+                    </p>
+                </div>
+
+                <h3>📱 Aplicación Universal</h3>
+                <p>
+                    Esta política se aplica con la <strong>misma hermenéutica</strong> (interpretación y principios) 
+                    a todas las aplicaciones de la suite SISGES®:
+                </p>
+                <ul>
+                    <li><strong>Aplicaciones actuales:</strong> Gastos, Nombres, Conteo</li>
+                    <li><strong>Aplicaciones futuras:</strong> Cualquier nueva app que desarrollemos para la plataforma</li>
+                    <li><strong>Todas las plataformas:</strong> Android, iOS, Web, Desktop (según disponibilidad)</li>
+                </ul>
+            </section>
+
+            <section id="responsable" class="section">
+                <h2>2. Responsable del Tratamiento de Datos</h2>
+                
+                <div class="contact-info">
+                    <h3>📧 Información del Responsable</h3>
+                    <p><strong>Empresa:</strong> Conta Solutions</p>
+                    <p><strong>Responsable:</strong> Juan José Caballero Reyna</p>
+                    <p><strong>Email:</strong> <a href="mailto:juanjosecaballeroreyna@gmail.com">juanjosecaballeroreyna@gmail.com</a></p>
+                    <p><strong>Productos:</strong> SISGES® v.1.7 y aplicaciones móviles asociadas</p>
+                </div>
+                
+                <p>
+                    Como responsables del tratamiento de datos, nos comprometemos a cumplir con 
+                    todas las normativas aplicables de protección de datos y a mantener los más 
+                    altos estándares de seguridad y confidencialidad.
+                </p>
+            </section>
+
+            <section id="datos-recopilamos" class="section">
+                <h2>3. Qué Información Recopilamos (Y Qué NO)</h2>
+                
+                <div class="warning-box">
+                    <h4>🚫 Lo que NO recopilamos</h4>
+                    <ul>
+                        <li>Nombre real, dirección o información personal identificable</li>
+                        <li>Datos bancarios o información financiera personal</li>
+                        <li>Contactos de su teléfono</li>
+                        <li>Ubicación GPS precisa</li>
+                        <li>Archivos personales fuera de las aplicaciones</li>
+                    </ul>
+                </div>
+
+                <h3>📊 Lo que SÍ recopilamos (mínimo necesario):</h3>
+                <p>
+                    Recopilamos únicamente la información esencial para que las aplicaciones funcionen correctamente:
+                </p>
+
+                <div class="data-section">
+                    <h4>🎤 Datos de Voz y Audio</h4>
+                    <ul>
+                        <li><strong>Aplicaciones:</strong> Gastos, Nombres</li>
+                        <li><strong>Qué recopilamos:</strong> Grabaciones de voz para reconocimiento automático</li>
+                        <li><strong>Duración:</strong> Procesamiento temporal, no almacenamiento permanente</li>
+                        <li><strong>Propósito:</strong> Convertir voz a texto para registro de datos</li>
+                    </ul>
+                </div>
+
+                <div class="data-section">
+                    <h4>💼 Datos Empresariales</h4>
+                    <ul>
+                        <li><strong>Gastos:</strong> Descripción, monto, categoría, fecha de gastos</li>
+                        <li><strong>Nombres:</strong> Carnet de identidad, nombres, teléfonos de clientes/proveedores</li>
+                        <li><strong>Conteo:</strong> Códigos de barras, cantidades, productos inventariados</li>
+                        <li><strong>Características:</strong> Información proporcionada voluntariamente para gestión empresarial</li>
+                    </ul>
+                </div>
+
+                <div class="data-section">
+                    <h4>📱 Datos del Dispositivo</h4>
+                    <ul>
+                        <li>Modelo y versión del dispositivo Android</li>
+                        <li>Versión del sistema operativo</li>
+                        <li>Identificadores únicos del dispositivo (cuando sea necesario)</li>
+                        <li>Información de red y conectividad</li>
+                    </ul>
+                </div>
+
+                <div class="data-section">
+                    <h4>📊 Datos de Uso</h4>
+                    <ul>
+                        <li>Frecuencia de uso de las aplicaciones</li>
+                        <li>Funciones más utilizadas</li>
+                        <li>Errores y fallos técnicos</li>
+                        <li>Estadísticas de rendimiento</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="como-recopilamos" class="section">
+                <h2>4. Cómo Recopilamos los Datos</h2>
+
+                <h3>Métodos de Recopilación:</h3>
+                <ul>
+                    <li><strong>Entrada Directa del Usuario:</strong> Datos que usted ingresa voluntariamente</li>
+                    <li><strong>Reconocimiento de Voz:</strong> Procesamiento automático de audio a texto</li>
+                    <li><strong>Escaneo de Códigos:</strong> Lectura de códigos de barras (Conteo)</li>
+                    <li><strong>Información del Sistema:</strong> Datos técnicos del dispositivo</li>
+                    <li><strong>Uso de la Aplicación:</strong> Métricas de rendimiento y uso</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4>⚠️ Importante sobre Reconocimiento de Voz</h4>
+                    <p>
+                        El procesamiento de voz se realiza localmente en su dispositivo cuando es posible. 
+                        Solo en casos donde se requiera procesamiento en la nube, los datos de audio 
+                        se transmiten de forma cifrada y se eliminan inmediatamente después del procesamiento.
+                    </p>
+                </div>
+            </section>
+
+            <section id="uso-datos" class="section">
+                <h2>5. Uso de los Datos</h2>
+                <p>
+                    Utilizamos sus datos exclusivamente para los siguientes propósitos legítimos:
+                </p>
+
+                <h3>Propósitos Principales:</h3>
+                <ul>
+                    <li><strong>Funcionalidad del Servicio:</strong> Procesar y almacenar información empresarial</li>
+                    <li><strong>Sincronización:</strong> Integrar datos con el sistema SISGES®</li>
+                    <li><strong>Reconocimiento de Voz:</strong> Convertir audio a texto para registro eficiente</li>
+                    <li><strong>Exportación de Datos:</strong> Generar reportes y archivos CSV (funciones premium)</li>
+                </ul>
+
+                <h3>Propósitos Secundarios:</h3>
+                <ul>
+                    <li><strong>Mejora del Servicio:</strong> Optimizar funcionalidades basadas en patrones de uso</li>
+                    <li><strong>Soporte Técnico:</strong> Diagnosticar y resolver problemas</li>
+                    <li><strong>Seguridad:</strong> Detectar y prevenir uso fraudulento o indebido</li>
+                    <li><strong>Cumplimiento Legal:</strong> Satisfacer requisitos legales aplicables</li>
+                </ul>
+            </section>
+
+            <section id="almacenamiento" class="section">
+                <h2>6. Almacenamiento y Seguridad de Datos</h2>
+
+                <h3>📱 Almacenamiento Local:</h3>
+                <p>
+                    La mayoría de sus datos se almacenan localmente en su dispositivo:
+                </p>
+                <ul>
+                    <li>Base de datos SQLite local en cada aplicación</li>
+                    <li>Archivos internos protegidos por el sistema Android</li>
+                    <li>Sin acceso desde otras aplicaciones o usuarios</li>
+                    <li>Cifrado disponible según capacidades del dispositivo</li>
+                </ul>
+
+                <h3>☁️ Almacenamiento en Servidor (Cuando Aplique):</h3>
+                <ul>
+                    <li>Solo para sincronización con SISGES® (cuando esté configurado)</li>
+                    <li>Servidores seguros con cifrado de datos</li>
+                    <li>Acceso restringido con credenciales autenticadas</li>
+                    <li>Respaldos cifrados y seguros</li>
+                </ul>
+
+                <div class="security-box">
+                    <h4>🔐 Medidas de Seguridad Implementadas</h4>
+                    <ul>
+                        <li><strong>Cifrado:</strong> Datos sensibles cifrados en reposo y en tránsito</li>
+                        <li><strong>Acceso Restringido:</strong> Solo personal autorizado puede acceder a servidores</li>
+                        <li><strong>Auditorías:</strong> Revisiones regulares de seguridad</li>
+                        <li><strong>Actualizaciones:</strong> Parches de seguridad aplicados regularmente</li>
+                        <li><strong>Respaldos:</strong> Copias de seguridad cifradas y distribuidas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="compartir-datos" class="section">
+                <h2>7. Compartir Datos con Terceros</h2>
+
+                <h3>🚫 No Compartimos con Terceros para Marketing</h3>
+                <p>
+                    <strong>Nunca</strong> vendemos, alquilamos o compartimos sus datos personales 
+                    o empresariales con terceros para fines de marketing o comerciales.
+                </p>
+
+                <h3>✅ Casos Limitados de Compartir Datos:</h3>
+                <ul>
+                    <li><strong>Google Play Services:</strong> Información de suscripciones y pagos (manejada por Google)</li>
+                    <li><strong>Requerimientos Legales:</strong> Solo cuando sea obligatorio por ley</li>
+                    <li><strong>Proveedores de Servicios:</strong> Servicios técnicos esenciales bajo estrictos acuerdos de confidencialidad</li>
+                    <li><strong>Emergencias:</strong> Para proteger la seguridad de usuarios o prevenir fraude</li>
+                </ul>
+
+                <h3>🔄 Integración con SISGES®:</h3>
+                <p>
+                    Los datos se sincronizan con su instalación local de SISGES® según su configuración. 
+                    Esta sincronización ocurre directamente entre sus dispositivos y no involucra terceros.
+                </p>
+            </section>
+
+            <section id="retencion" class="section">
+                <h2>8. Retención de Datos</h2>
+
+                <h3>⏱️ Períodos de Retención:</h3>
+                <ul>
+                    <li><strong>Datos Empresariales:</strong> Conservados mientras mantenga la aplicación instalada</li>
+                    <li><strong>Datos de Voz:</strong> Procesados inmediatamente y eliminados (no almacenados)</li>
+                    <li><strong>Logs de Uso:</strong> 12 meses para análisis de rendimiento</li>
+                    <li><strong>Datos de Soporte:</strong> 24 meses para resolver consultas técnicas</li>
+                </ul>
+
+                <h3>🗑️ Eliminación de Datos:</h3>
+                <p>
+                    Los datos se eliminan automáticamente cuando:
+                </p>
+                <ul>
+                    <li>Desinstala la aplicación</li>
+                    <li>Solicita explícitamente la eliminación</li>
+                    <li>Vencen los períodos de retención establecidos</li>
+                    <li>Su cuenta permanece inactiva por más de 3 años</li>
+                </ul>
+            </section>
+
+            <section id="derechos" class="section">
+                <h2>9. Su Control Total Sobre los Datos</h2>
+
+                <div class="rights-section">
+                    <h4>🎮 Usted Tiene Control Completo</h4>
+                    <p>Sus datos son <strong>SUYOS</strong>. Puede:</p>
+                    <ul style="font-size: 1.1rem; line-height: 1.8;">
+                        <li>🗑️ <strong>Eliminar todo</strong> → Simplemente desinstale la aplicación</li>
+                        <li>📤 <strong>Exportar todo</strong> → Use la función de exportación CSV</li>
+                        <li>✏️ <strong>Modificar datos</strong> → Edite directamente en la aplicación</li>
+                        <li>🔒 <strong>Mantener privado</strong> → Todo se almacena localmente</li>
+                        <li>🚫 <strong>No compartir</strong> → Nosotros no vendemos ni compartimos</li>
+                    </ul>
+                </div>
+
+                <div style="background: #f0f8ff; padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #3498db;">
+                    <h4 style="color: #3498db; margin-bottom: 1rem;">💡 ¿Quiere eliminar todos sus datos?</h4>
+                    <p style="margin-bottom: 1rem; font-size: 1.1rem;">
+                        <strong>Es súper fácil:</strong> Solo desinstale la aplicación de su dispositivo. 
+                        Al hacerlo, todos sus datos locales se eliminan automáticamente.
+                    </p>
+                    <p style="margin: 0; font-style: italic;">
+                        No necesita contactarnos ni hacer solicitudes especiales. Usted tiene el poder.
+                    </p>
+                </div>
+
+                <h3>📧 ¿Necesita Ayuda?</h3>
+                <p>
+                    Si tiene preguntas sobre sus datos o necesita asistencia, contáctenos:
+                    <strong><a href="mailto:juanjosecaballeroreyna@gmail.com">juanjosecaballeroreyna@gmail.com</a></strong>
+                </p>
+                <p>
+                    Respuesta típica: <strong>24-48 horas</strong> ⚡
+                </p>
+            </section>
+
+            <section id="apps-especificas" class="section">
+                <h2>10. Detalles por Aplicación (Actuales y Futuras)</h2>
+                
+                <div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #ff9800;">
+                    <h4 style="color: #e65100; margin-bottom: 0.5rem;">🔄 Principio de Coherencia</h4>
+                    <p style="margin: 0;">
+                        <strong>Todas las aplicaciones SISGES®</strong> (actuales y futuras) siguen los mismos principios de privacidad. 
+                        Si desarrollamos nuevas apps, aplicarán exactamente la misma política con las mismas protecciones.
+                    </p>
+                </div>
+
+                <div class="app-privacy">
+                    <h4>💰 GASTOS - Gestión de Gastos Empresariales</h4>
+                    <ul>
+                        <li><strong>Datos de Voz:</strong> Solo para reconocimiento temporal, no almacenados</li>
+                        <li><strong>Datos Financieros:</strong> Montos, categorías, fechas, descripciones</li>
+                        <li><strong>Almacenamiento:</strong> Local en el dispositivo</li>
+                        <li><strong>Exportación:</strong> CSV disponible para usuarios premium</li>
+                        <li><strong>Sincronización:</strong> Con SISGES® según configuración del usuario</li>
+                    </ul>
+                </div>
+
+                <div class="app-privacy">
+                    <h4>👥 NOMBRES - Registro de Clientes y Proveedores</h4>
+                    <ul>
+                        <li><strong>Datos de Voz:</strong> Captura secuencial (Carnet → Nombre → Teléfono)</li>
+                        <li><strong>Datos Personales de Terceros:</strong> CI, nombres, teléfonos de clientes</li>
+                        <li><strong>Responsabilidad:</strong> Usuario responsable de obtener consentimiento de terceros</li>
+                        <li><strong>Validación:</strong> Verificación automática de formato de datos</li>
+                        <li><strong>Exportación:</strong> Archivos CSV con opción de compartir</li>
+                    </ul>
+                </div>
+
+                <div class="app-privacy">
+                    <h4>📊 CONTEO - Inventarios y Códigos de Barras</h4>
+                    <ul>
+                        <li><strong>Cámara:</strong> Solo para escaneo de códigos, no almacena imágenes</li>
+                        <li><strong>Datos de Inventario:</strong> Códigos de barras, cantidades, productos</li>
+                        <li><strong>Estadísticas:</strong> Conteos agregados y resúmenes</li>
+                        <li><strong>Modo Premium:</strong> Exportación avanzada de inventarios</li>
+                        <li><strong>Integración:</strong> Sincronización directa con módulo de inventarios SISGES®</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Responsabilidad con Datos de Terceros</h4>
+                    <p>
+                        Al utilizar la aplicación <strong>NOMBRES</strong> para registrar información de clientes 
+                        y proveedores, usted se compromete a obtener el consentimiento apropiado de estas 
+                        personas para el procesamiento de sus datos personales, cumpliendo con las 
+                        normativas locales de protección de datos.
+                    </p>
+                </div>
+            </section>
+
+            <section id="menores" class="section">
+                <h2>11. Menores de Edad</h2>
+                <p>
+                    Nuestras aplicaciones están diseñadas para uso empresarial y no están dirigidas 
+                    a menores de 18 años. No recopilamos intencionalmente datos de menores de edad.
+                </p>
+                <p>
+                    Si detectamos que hemos recopilado datos de un menor de edad, eliminaremos 
+                    inmediatamente dicha información de nuestros sistemas.
+                </p>
+                <p>
+                    Si es padre/madre o tutor y cree que un menor ha proporcionado información 
+                    a nuestras aplicaciones, contáctenos inmediatamente.
+                </p>
+            </section>
+
+            <section id="cambios" class="section">
+                <h2>12. Cambios en esta Política</h2>
+                <p>
+                    Podemos actualizar esta Política de Privacidad periódicamente para reflejar:
+                </p>
+                <ul>
+                    <li>Cambios en nuestras prácticas de datos</li>
+                    <li>Nuevas funcionalidades en las aplicaciones</li>
+                    <li>Modificaciones en la legislación aplicable</li>
+                    <li>Mejoras en medidas de seguridad</li>
+                </ul>
+
+                <h3>📢 Notificación de Cambios:</h3>
+                <p>
+                    Le notificaremos sobre cambios importantes mediante:
+                </p>
+                <ul>
+                    <li>Notificaciones dentro de las aplicaciones</li>
+                    <li>Actualizaciones en nuestro sitio web</li>
+                    <li>Comunicación directa (cuando tengamos su contacto)</li>
+                </ul>
+                
+                <p>
+                    La fecha de "Última actualización" al inicio de este documento 
+                    indica cuándo se realizó la revisión más reciente.
+                </p>
+            </section>
+
+            <section id="contacto" class="section">
+                <h2>13. Contacto para Asuntos de Privacidad</h2>
+                
+                <div class="contact-info">
+                    <h3>📧 Responsable de Protección de Datos</h3>
+                    <p><strong>Nombre:</strong> Juan José Caballero Reyna</p>
+                    <p><strong>Email:</strong> <a href="mailto:juanjosecaballeroreyna@gmail.com">juanjosecaballeroreyna@gmail.com</a></p>
+                    <p><strong>Empresa:</strong> Conta Solutions</p>
+                    <p><strong>Ubicación:</strong> Bolivia</p>
+                    <br>
+                    <p><strong>Para consultas sobre privacidad, puede contactarnos por:</strong></p>
+                    <ul>
+                        <li>Correo electrónico (respuesta en 48 horas hábiles)</li>
+                        <li>Opciones de soporte dentro de las aplicaciones</li>
+                        <li>Formulario de contacto en nuestro sitio web</li>
+                    </ul>
+                    <br>
+                    <p><strong>Tiempo de Respuesta:</strong></p>
+                    <ul>
+                        <li>Consultas generales: 48 horas</li>
+                        <li>Ejercicio de derechos: 30 días hábiles</li>
+                        <li>Incidentes de seguridad: 24 horas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin: 3rem 0; padding: 3rem; background: linear-gradient(135deg, #e8f5e8 0%, #f0f8ff 100%); border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h3 style="color: #27ae60; margin-bottom: 1.5rem; font-size: 1.5rem;">
+                    🤝 Nuestro Compromiso Simple
+                </h3>
+                <p style="color: #2c3e50; font-size: 1.2rem; margin-bottom: 1.5rem;">
+                    <strong>Su privacidad no es negociable.</strong><br>
+                    Sus datos son suyos. Punto.
+                </p>
+                
+                <div style="background: rgba(255,255,255,0.8); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+                    <p style="color: #2c3e50; margin-bottom: 1rem;">
+                        <strong>¿Preguntas? ¿Dudas? ¿Sugerencias?</strong>
+                    </p>
+                    <p style="color: #3498db; font-size: 1.1rem; margin: 0;">
+                        📧 <a href="mailto:juanjosecaballeroreyna@gmail.com" style="color: #3498db; text-decoration: none; font-weight: bold;">juanjosecaballeroreyna@gmail.com</a>
+                    </p>
+                    <p style="color: #666; font-size: 0.9rem; margin-top: 0.5rem;">
+                        Respuesta en 24-48 horas • Siempre en español
+                    </p>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-weight: bold; color: #e74c3c;">
+                    Hecho con ❤️ en Bolivia 🇧🇴
+                </p>
+                <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                    <strong>Versión:</strong> 2.0 | <strong>Actualizado:</strong> Agosto 2025 | <strong>Próxima revisión:</strong> Febrero 2026
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Conta Solutions. Todos los derechos reservados.</p>
+            <p>Política de Privacidad sujeta a las leyes bolivianas de protección de datos</p>
+        </div>
+    </footer>
+</body>
+</html>

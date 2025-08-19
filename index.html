@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Solutions - Plataforma de Gestión Empresarial SISGES®</title>
+    <meta name="description" content="Plataforma integral de gestión empresarial con SISGES® como núcleo contable y aplicaciones móviles complementarias para control total de tu negocio.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background: #34495e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-menu li {
+            margin: 0 1rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400"><rect fill="%233498db" width="1000" height="400"/><circle fill="%232980b9" cx="200" cy="100" r="50" opacity="0.3"/><circle fill="%2734495e" cx="800" cy="300" r="80" opacity="0.2"/></svg>');
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Platform Overview */
+        .platform-overview {
+            background: white;
+        }
+        
+        .core-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        /* SISGES Core */
+        .sisges-core {
+            background: #ecf0f1;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .module-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .module-card h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .module-list {
+            list-style: none;
+        }
+        
+        .module-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .module-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Mobile Apps */
+        .mobile-apps {
+            background: white;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .app-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .app-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .app-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .app-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .app-card p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-features {
+            text-align: left;
+            list-style: none;
+        }
+        
+        .app-features li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .app-features li:before {
+            content: "📱";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Integration Section */
+        .integration {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+        
+        .integration-diagram {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            border-top: 1px solid #34495e;
+            padding-top: 1rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-menu li {
+                margin: 0.25rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CONTA SOLUTIONS</div>
+            <div class="tagline">Plataforma Integral de Gestión Empresarial</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#plataforma">Plataforma</a></li>
+                <li><a href="#sisges">SISGES®</a></li>
+                <li><a href="#apps">Aplicaciones</a></li>
+                <li><a href="#integracion">Integración</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>SISGES® v.1.7</h1>
+            <p>Sistema de Control de Gestión completamente autónomo con aplicaciones móviles integradas</p>
+            <a href="#plataforma" class="cta-button">Conocer la Plataforma</a>
+        </div>
+    </section>
+
+    <section class="platform-overview" id="plataforma">
+        <div class="container">
+            <h2 class="section-title">Una Plataforma Completa para tu Empresa</h2>
+            <p class="section-subtitle">
+                CONTA SOLUTIONS ofrece una solución integral que combina el poder del sistema contable SISGES® 
+                con aplicaciones móviles especializadas para cubrir todas las necesidades de gestión empresarial.
+            </p>
+            
+            <div class="core-features">
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Sistema Central SISGES®</h3>
+                    <p>Núcleo contable y administrativo robusto que centraliza toda la información financiera y operativa de tu empresa con integración automática de datos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Aplicaciones Móviles</h3>
+                    <p>Suite de apps especializadas (Gastos, Nombres, Conteo) que facilitan la captura de datos en campo y se sincronizan automáticamente con SISGES®.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Integración Total</h3>
+                    <p>Todos los módulos trabajan en armonía, asegurando que la información fluya automáticamente a sus destinos contables correspondientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sisges-core" id="sisges">
+        <div class="container">
+            <h2 class="section-title">SISGES® - El Corazón de tu Gestión</h2>
+            <p class="section-subtitle">
+                Sistema de escritorio completamente autónomo que maneja los tres pilares fundamentales 
+                de una administración eficiente
+            </p>
+            
+            <div class="modules-grid">
+                <div class="module-card">
+                    <h3>🏦 Gestión Financiera/Contable</h3>
+                    <ul class="module-list">
+                        <li><strong>Sistema de Contabilidad:</strong> Asientos, Libro Diario, Mayor Analítico, Balance General</li>
+                        <li><strong>Control Presupuestario:</strong> Seguimiento y evolución histórica del presupuesto</li>
+                        <li><strong>Control de Caja:</strong> Manejo integral de ingresos y gastos</li>
+                        <li><strong>Integración con App GASTOS:</strong> Captura automática por voz</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card">
+                    <h3>📦 Gestión de Inventarios y Cobranzas</h3>
+                    <ul class="module-list">
+                        <li><strong>Control de Inventarios:</strong> Ingreso, remisión, ventas y devoluciones</li>
+                        <li><strong>Kardex Completo:</strong> Movimientos por producto y línea</li>
+                        <li><strong>Integración con App CONTEO:</strong> Inventarios físicos digitalizados</li>
+                        <li><strong>Gestión de Cobranzas:</strong> Control total de créditos y pagos</li>
+                        <li><strong>Integración con App NOMBRES:</strong> Registro de clientes por voz</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card">
+                    <h3>👥 Gestión Administrativa (SISADM)</h3>
+                    <ul class="module-list">
+                        <li><strong>SISASI:</strong> Control de asistencia, retrasos y faltas</li>
+                        <li><strong>SISAFI:</strong> Gestión de activos fijos</li>
+                        <li><strong>SISAGE:</strong> Agenda y cronograma empresarial</li>
+                        <li><strong>SISCOR:</strong> Control de correspondencia</li>
+                        <li><strong>SISIVA:</strong> Manejo de libros IVA</li>
+                        <li><strong>SISPRV:</strong> Gestión integral de proveedores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mobile-apps" id="apps">
+        <div class="container">
+            <h2 class="section-title">Aplicaciones Móviles Especializadas</h2>
+            <p class="section-subtitle">
+                Cada app está diseñada para optimizar procesos específicos con captura de datos por voz 
+                e integración automática con SISGES®
+            </p>
+            
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">💰</div>
+                    <h3>GASTOS</h3>
+                    <p>Captura inteligente de gastos empresariales con reconocimiento de voz</p>
+                    <ul class="app-features">
+                        <li>Registro de gastos por voz</li>
+                        <li>Categorización automática</li>
+                        <li>Transferencia a SISGES®</li>
+                        <li>Reportes en tiempo real</li>
+                        <li>Modo offline disponible</li>
+                    </ul>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">👥</div>
+                    <h3>NOMBRES</h3>
+                    <p>Censo ágil de clientes y proveedores con captura secuencial por voz</p>
+                    <ul class="app-features">
+                        <li>Captura: Carnet → Nombre → Teléfono</li>
+                        <li>Validación automática de datos</li>
+                        <li>Exportación a CSV</li>
+                        <li>Sincronización con SISGES®</li>
+                        <li>Interfaz intuitiva</li>
+                    </ul>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-icon">📊</div>
+                    <h3>CONTEO</h3>
+                    <p>Digitalización de inventarios físicos con escaneo de códigos de barras</p>
+                    <ul class="app-features">
+                        <li>Escaneo manual y automático</li>
+                        <li>Conteo inteligente por producto</li>
+                        <li>Estadísticas en tiempo real</li>
+                        <li>Exportación premium a CSV</li>
+                        <li>Integración con SISGES®</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="integration" id="integracion">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Integración Perfecta</h2>
+            <p class="section-subtitle" style="color: #ecf0f1; font-weight: bold;">
+                Todos los componentes trabajan en armonía para brindarte control total sobre tu negocio
+            </p>
+            
+            <div class="integration-diagram">
+                <!-- Sistema Orbital -->
+                <div style="position: relative; width: 100%; max-width: 600px; height: 500px; margin: 2rem auto;">
+                    
+                    <!-- Órbita externa para las apps -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; border: 2px dashed rgba(255,255,255,0.3); border-radius: 50%;"></div>
+                    
+                    <!-- SISGES Central (sin box contenedor) -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 0.3rem;">🏢</div>
+                        <div style="color: white; font-weight: bold; font-size: 1.3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">SISGES®</div>
+                    </div>
+                    
+                    <!-- Subsistemas SISGES (distribuidos sin sobreponerse) -->
+                    <div style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); background: rgba(52, 152, 219, 0.9); border-radius: 15px; padding: 0.5rem 1rem; color: white; font-size: 0.8rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.3);">
+                        📊 Contabilidad
+                    </div>
+                    <div style="position: absolute; top: 50%; right: 25%; transform: translate(50%, -50%); background: rgba(52, 152, 219, 0.9); border-radius: 15px; padding: 0.5rem 1rem; color: white; font-size: 0.8rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.3);">
+                        📦 Inventarios
+                    </div>
+                    <div style="position: absolute; bottom: 25%; left: 50%; transform: translate(-50%, 50%); background: rgba(52, 152, 219, 0.9); border-radius: 15px; padding: 0.5rem 1rem; color: white; font-size: 0.8rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.3);">
+                        💼 Cobranzas
+                    </div>
+                    <div style="position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); background: rgba(52, 152, 219, 0.9); border-radius: 15px; padding: 0.5rem 1rem; color: white; font-size: 0.8rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); border: 2px solid rgba(255,255,255,0.3);">
+                        👥 Administración
+                    </div>
+                    
+                    <!-- Apps Móviles (órbita externa - distribuidas equidistantemente 120° entre sí) -->
+                    <!-- GASTOS (posición 12 en punto) -->
+                    <div style="position: absolute; top: 8%; left: 50%; transform: translate(-50%, -50%); background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; width: 70px; height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid white;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">💰</div>
+                        <div style="color: white; font-weight: bold; font-size: 0.7rem; text-align: center;">GASTOS</div>
+                    </div>
+                    
+                    <!-- NOMBRES (posición 4 en punto) -->
+                    <div style="position: absolute; top: 70%; right: 13%; transform: translate(50%, -50%); background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 50%; width: 70px; height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid white;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">👥</div>
+                        <div style="color: white; font-weight: bold; font-size: 0.7rem; text-align: center;">NOMBRES</div>
+                    </div>
+                    
+                    <!-- CONTEO (posición 8 en punto) -->
+                    <div style="position: absolute; top: 70%; left: 13%; transform: translate(-50%, -50%); background: linear-gradient(135deg, #27ae60, #229954); border-radius: 50%; width: 70px; height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid white;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">📊</div>
+                        <div style="color: white; font-weight: bold; font-size: 0.7rem; text-align: center;">CONTEO</div>
+                    </div>
+                    
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="color: #ecf0f1; font-size: 1rem; max-width: 500px; margin: 0 auto;">
+                        <strong>🔄 Sincronización Automática:</strong> Los datos fluyen desde las aplicaciones móviles 
+                        hacia los módulos correspondientes de SISGES®, manteniendo toda su información empresarial 
+                        centralizada y actualizada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="margin-bottom: 1rem;">CONTA SOLUTIONS</h3>
+                <p>Transformando la gestión empresarial con tecnología boliviana</p>
+                
+                <!-- Contact Information -->
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; margin: 2rem 0; text-align: center;">
+                    <h4 style="color: #3498db; margin-bottom: 1rem;">📧 Información de Contacto</h4>
+                    <p style="margin: 0.5rem 0;"><strong>Responsable:</strong> Juan José Caballero Reyna</p>
+                    <p style="margin: 0.5rem 0;"><strong>Email:</strong> <a href="mailto:juanjosecaballeroreyna@gmail.com" style="color: #3498db; text-decoration: none;">juanjosecaballeroreyna@gmail.com</a></p>
+                    <p style="margin: 0.5rem 0;"><strong>Empresa:</strong> Conta Solutions</p>
+                    <p style="margin: 0.5rem 0;"><strong>País:</strong> Bolivia 🇧🇴</p>
+                </div>
+            </div>
+            
+            <ul class="footer-links">
+                <li><a href="terminos.html">Términos y Condiciones</a></li>
+                <li><a href="privacidad.html">Política de Privacidad</a></li>
+                <li><a href="mailto:juanjosecaballeroreyna@gmail.com">Soporte Técnico</a></li>
+                <li><a href="mailto:juanjosecaballeroreyna@gmail.com">Contacto</a></li>
+            </ul>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Conta Solutions. Todos los derechos reservados. SISGES® es marca registrada.</p>
+                <p>Desarrollado por Conta Solutions - Soluciones empresariales bolivianas</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
