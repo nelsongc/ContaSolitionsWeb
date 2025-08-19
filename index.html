@@ -325,6 +325,132 @@
             opacity: 0.7;
         }
         
+        /* Orbital System Styles */
+        .orbital-system {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            margin: 2rem auto;
+        }
+        
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border: 2px dashed rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+        
+        .sisges-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .sisges-icon {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .sisges-label {
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subsystem {
+            position: absolute;
+            background: rgba(52, 152, 219, 0.9);
+            border-radius: 12px;
+            padding: 0.4rem 0.8rem;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.3);
+            white-space: nowrap;
+        }
+        
+        .subsystem-contabilidad {
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .subsystem-inventarios {
+            top: 50%;
+            right: 20%;
+            transform: translate(50%, -50%);
+        }
+        
+        .subsystem-cobranzas {
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+        
+        .subsystem-administracion {
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .mobile-app {
+            position: absolute;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 2px solid white;
+        }
+        
+        .app-gastos {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .app-nombres {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            top: 75%;
+            right: 10%;
+            transform: translate(50%, -50%);
+        }
+        
+        .app-conteo {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            top: 75%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .app-icon {
+            font-size: 1rem;
+            margin-bottom: 0.1rem;
+        }
+        
+        .app-label {
+            color: white;
+            font-weight: bold;
+            font-size: 0.6rem;
+            text-align: center;
+            line-height: 1;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
@@ -346,6 +472,70 @@
             
             .nav-menu li {
                 margin: 0.25rem 0;
+            }
+            
+            /* Orbital system mobile adjustments */
+            .orbital-system {
+                max-width: 320px;
+                height: 300px;
+            }
+            
+            .orbit-ring {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .sisges-icon {
+                font-size: 1.5rem;
+            }
+            
+            .sisges-label {
+                font-size: 0.9rem;
+            }
+            
+            .subsystem {
+                font-size: 0.6rem;
+                padding: 0.3rem 0.6rem;
+                border-radius: 8px;
+            }
+            
+            .subsystem-text {
+                display: none;
+            }
+            
+            .mobile-app {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .app-icon {
+                font-size: 0.8rem;
+            }
+            
+            .app-label {
+                font-size: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .orbital-system {
+                max-width: 280px;
+                height: 260px;
+            }
+            
+            .orbit-ring {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .mobile-app {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .subsystem {
+                font-size: 0.5rem;
+                padding: 0.2rem 0.4rem;
             }
         }
     </style>
@@ -474,6 +664,16 @@
                         <li>Reportes en tiempo real</li>
                         <li>Modo offline disponible</li>
                     </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.contasolutions.gastos" 
+                       target="_blank" 
+                       style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                       onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
+                       onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
+                        </svg>
+                        Descargar en Google Play
+                    </a>
                 </div>
                 
                 <div class="app-card">
@@ -487,6 +687,16 @@
                         <li>Sincronización con SISGES®</li>
                         <li>Interfaz intuitiva</li>
                     </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.contasolutions.nombres" 
+                       target="_blank" 
+                       style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                       onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
+                       onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
+                        </svg>
+                        Descargar en Google Play
+                    </a>
                 </div>
                 
                 <div class="app-card">
@@ -500,6 +710,16 @@
                         <li>Exportación premium a CSV</li>
                         <li>Integración con SISGES®</li>
                     </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.contasolutions.conteo" 
+                       target="_blank" 
+                       style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                       onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
+                       onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
+                        </svg>
+                        Descargar en Google Play
+                    </a>
                 </div>
             </div>
         </div>
@@ -513,16 +733,16 @@
             </p>
             
             <div class="integration-diagram">
-                <!-- Sistema Orbital -->
-                <div style="position: relative; width: 100%; max-width: 600px; height: 500px; margin: 2rem auto;">
+                <!-- Sistema Orbital Responsivo -->
+                <div class="orbital-system">
                     
                     <!-- Órbita externa para las apps -->
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; border: 2px dashed rgba(255,255,255,0.3); border-radius: 50%;"></div>
+                    <div class="orbit-ring"></div>
                     
-                    <!-- SISGES Central (sin box contenedor) -->
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 0.3rem;">🏢</div>
-                        <div style="color: white; font-weight: bold; font-size: 1.3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">SISGES®</div>
+                    <!-- SISGES Central -->
+                    <div class="sisges-center">
+                        <div class="sisges-icon">🏢</div>
+                        <div class="sisges-label">SISGES®</div>
                     </div>
                     
                     <!-- Subsistemas SISGES (distribuidos sin sobreponerse) -->
