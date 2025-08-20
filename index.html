@@ -414,28 +414,38 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.8);
             border: 2px solid white;
         }
         
         .app-gastos {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            background: linear-gradient(135deg, #1e3d9b, #1a3587);
+            border: 2px solid rgba(255,255,255,0.8);
             top: 5%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         
         .app-nombres {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            background: linear-gradient(135deg, #20a09e, #1d8f8a);
+            border: 2px solid rgba(255,255,255,0.8);
             top: 75%;
             right: 10%;
             transform: translate(50%, -50%);
         }
         
         .app-conteo {
-            background: linear-gradient(135deg, #27ae60, #229954);
+            background: linear-gradient(135deg, #e6f8ff, #d1f0ff);
+            border: 2px solid rgba(0,0,0,0.3);
             top: 75%;
             left: 10%;
             transform: translate(-50%, -50%);
+        }
+        
+        .app-conteo .app-label {
+            color: #2c3e50;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
         
         .app-icon {
@@ -446,9 +456,10 @@
         .app-label {
             color: white;
             font-weight: bold;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             text-align: center;
             line-height: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
         
         /* Responsive Design */
@@ -556,6 +567,7 @@
                 <li><a href="#sisges">SISGES®</a></li>
                 <li><a href="#apps">Aplicaciones</a></li>
                 <li><a href="#integracion">Integración</a></li>
+                <li><a href="#soporte">Soporte</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </div>
@@ -654,7 +666,16 @@
             
             <div class="apps-grid">
                 <div class="app-card">
-                    <div class="app-icon">💰</div>
+                    <div class="app-icon">
+                        <svg width="64" height="64" viewBox="0 0 285 285" style="fill: white;">
+                            <rect width="285" height="285" fill="#1e3d9b"/>
+                            <path d="M110.2 76.4c-16.8 2-29.4 9.1-33.4 18.5-.5 1.2-.6 1.9-.6 4.9 0 3.2.1 3.6.7 5.1 3.1 7.3 11.9 13.2 24.3 16.2 6.3 1.6 8.9 1.8 17.9 1.8 7.3 0 8.7-.1 11.9-.6 15.3-2.4 26.4-8.8 29.9-17.1.7-1.6.8-2.4.9-4.5.2-5.1-1.1-8.3-5.3-12.4-1.4-1.5-3.5-3.2-4.7-4-6.1-4-14.7-6.8-23.9-7.9-4-.5-14-.5-17.9 0z" fill="white"/>
+                            <path d="M76.1 121.6c.1 4.7.1 5.1.8 6.6 3.6 8.5 14.8 15 30.4 17.4 1.8.3 5.3.6 7.7.7l4.4.2 1.4-2.8c2.2-4.4 4.9-8.4 8.2-12l1.5-1.7-1.9.2c-20 2-39.4-2.6-50.7-12.1l-1.8-1.5v5z" fill="white"/>
+                            <path d="M160.6 123.3c-7 1.1-13.2 3.4-18.6 7.1-9.3 6.2-15.5 15.5-18 26.9-.5 2.2-.6 3.3-.6 8.6s.1 6.4.6 8.6c2.5 11.4 8.8 20.7 18.2 26.9 4.6 3.1 8.9 4.9 14.6 6.3 2.9.7 3.4.8 9.2.7 5.3 0 6.4-.1 8.6-.6 17.1-3.8 29.5-16.3 33.3-33.4.5-2.2.6-3.3.6-8.6s-.1-6.4-.6-8.6c-3.8-17.1-16.3-29.6-33.2-33.3-1.9-.4-3.5-.5-7.8-.6-3 0-5.8 0-6.2 0zm9.2 19.7v4.3l1.3.6c3 1.4 5.8 5.3 6.1 8.5l.2 1.6h-7.6v-.7c0-1.7-1.8-3.2-3.9-3.2-2.5 0-3.9 1.4-3.9 3.8 0 2.7 1.2 3.7 4.8 4.2 4.3.5 7.8 2.9 9.5 6.7.8 1.7.8 1.9.8 4.7 0 2.9 0 3.1-.9 4.8-1.1 2.2-3.2 4.5-5.1 5.3l-1.3.6v4.3l.1 4.3h-7.8v-4.3l-.1-4.3-1.3-.6c-3-1.4-5.8-5.3-6.1-8.6l-.2-1.6h7.6v.7c0 1.8 1.8 3.2 3.9 3.2 2.5 0 3.9-1.4 3.9-3.9 0-1.6-.6-2.8-1.7-3.4-.4-.2-1.8-.5-3-.7-4.3-.5-7.8-2.9-9.5-6.7-.8-1.7-.8-1.9-.8-4.7s.1-3.1.8-4.7c1-2.1 3.3-4.5 5.2-5.4l1.3-.6v-4.3l.1-4.3h7.8v4.3z" fill="white"/>
+                            <path d="M76.1 144.3c0 4.7.2 6 1.4 8.4 2.8 5.7 9.6 10.5 18.9 13.6 5.2 1.7 10.1 2.6 17.9 3.4l1.3.1.2-5.3c.1-3.8.3-5.9.7-7.8.3-1.4.5-2.6.5-2.6s-1.3-.1-2.9-.2c-14.9-.9-28-5.4-36.3-12.5l-1.7-1.4v4.3z" fill="white"/>
+                            <path d="M76.1 168.2c.1 4.7.1 5.1.8 6.6 3.6 8.5 14.7 14.9 30.4 17.4 2.4.4 5 .6 9.7.7 3.5.1 6.4.1 6.4-.1s-.4-.9-.9-1.7c-1.9-3.2-4.6-9.7-5.4-13.2-.2-.7-.2-.7-3.2-.9-14.6-.8-27.9-5.4-36.2-12.5l-1.7-1.4.1 5z" fill="white"/>
+                        </svg>
+                    </div>
                     <h3>GASTOS</h3>
                     <p>Captura inteligente de gastos empresariales con reconocimiento de voz</p>
                     <ul class="app-features">
@@ -677,7 +698,13 @@
                 </div>
                 
                 <div class="app-card">
-                    <div class="app-icon">👥</div>
+                    <div class="app-icon">
+                        <svg width="64" height="64" viewBox="0 0 1024 1024" style="fill: white;">
+                            <rect width="1024" height="1024" fill="#20a09e"/>
+                            <path d="M919.6 187.9v648.2c0 45.2-36.7 81.9-81.9 81.9H172.9c-45.2 0-81.9-36.7-81.9-81.9V187.9c0-45.2 36.7-81.9 81.9-81.9h664.8c45.2 0 81.9 36.7 81.9 81.9zm-787.6 118.1c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18zm0 465.7c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18zm0-116.4c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18zm0-116.4c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18zm489.3-78.3c11.4-15.2 18.2-34.1 18.2-54.6v-48c0-50.2-40.8-91-91-91h-8.4c-50.2 0-91 40.8-91 91v48c0 19.8 6.3 38.1 17 53l.1.2c1.4 10.1 1.1 6.1.9 23.5l-.3 17.9-15.5 8.4c-39 20.9-74.9 43.8-105.4 67.1-16 12.2-25.7 25.9-30.8 43.7-2.1 7.2-2.3 9.9-2.3 31.4v23.5l2.8 4.7c3.2 5.5 7.1 8.5 13.4 10.4 6.9 2.1 423.7 2.1 430.6 0 6.3-1.9 10.2-4.9 13.4-10.4l2.8-4.7v-24.5c0-22.6-.2-25.1-2.3-32.5-4.4-15.2-13.1-28.3-25.2-38.2-25.7-20.8-73.4-51.4-111.5-71.4l-14-7.4-.3-20-1.3-20zm-489.3-271c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18zm0 232.9c-9.9 0-18 8.1-18 18s8.1 18 18 18 18-8.1 18-18-8.1-18-18-18z" fill="#fdf7ef"/>
+                            <rect x="183.2" y="106" width="34.2" height="785.4" fill="#e0ddd4"/>
+                        </svg>
+                    </div>
                     <h3>NOMBRES</h3>
                     <p>Censo ágil de clientes y proveedores con captura secuencial por voz</p>
                     <ul class="app-features">
@@ -700,7 +727,13 @@
                 </div>
                 
                 <div class="app-card">
-                    <div class="app-icon">📊</div>
+                    <div class="app-icon">
+                        <svg width="64" height="64" viewBox="0 0 512 512" style="fill: white;">
+                            <rect width="512" height="512" fill="#e6f8ff"/>
+                            <path d="M206 118.9c-4.4.5-8.9 4.3-10.2 8.5-1 3.2-6 59.9-5.7 64.9.6 9.4 5 20.7 11.2 28.2 5.8 7.2 15.1 13.4 23.8 16.1 2.7.8 144.4 24.5 153 25.6 2.9.4 7.4-1.2 9.8-3.4l2.1-2 10-31.9c7.2-22.8 10.1-32.6 10.1-34.4.1-3.2-1.5-7.1-3.8-9.3-1.8-1.8-3.3-2.2-100.1-32.1-80.5-24.8-98.7-30.3-100.2-30.1zm113.1 145.6c-27-4.4-49.3-8-49.6-8.1-.9-.2-6.5 32.5-6.1 35 .2 1 .9 2.8 1.5 3.9 2 3.5 4 4.8 12 7.2l7.2 2.2-10.1 32.8c-11.4 36.9-11.3 36.4-9 44.6 3.8 13.6 16.1 23.1 30.1 23.2 4.5 0 58.7-9 61.2-10.2 2.7-1.4 5.5-4.5 6.3-7.5.4-1.4 2.4-27.6 4.4-58.3 3.6-54.7 3.7-55.8 2.3-56.3-.7-.3-23.3-4.1-50.3-8.5z" fill="#0678a2"/>
+                            <path d="M144.8 108.8c-3.2-4-8.2-2.5-17.4 5.1-10.1 8.4-18.2 20.8-22.6 34.7-2 6.3-3.5 21.2-2.8 28.2 1.2 13.2 4.8 23.4 11.8 34.2 2.9 4.5 9.7 11.7 11.8 12.5 3.5 1.4 7.4-.9 7.8-4.7.4-3.2 0-3.9-3.8-7.8-6.5-6.6-11.8-16.5-14-26.2-1.9-8.7-2.1-12.4-.8-22.4 1-8.1 1.4-9.9 3.3-14.7 2.7-6.6 8.1-15.4 12.3-19.8 2.9-2.9 7.4-6.5 13-10.2 2.1-1.4 2.4-1.8 2.7-4.3.3-2.3.1-3.1-1.1-4.7zm17.1 16.6c-3.3-1-8.4 1.1-14.9 6.3-5 3.9-7.6 6.8-11.2 12.6-4 6.3-5.4 10.1-6.7 18.2-2.3 14.3.7 26.5 9.3 37.9 6.9 9.1 12.1 11.9 16.1 8.8 1.5-1.2 1.9-2 2.2-4 .3-2.3 0-2.8-2.1-5.1-1.3-1.5-4.2-4.9-6.3-7.6-6.2-7.8-8.6-16.3-7.4-26.4 1.4-12.1 7.9-21.9 18.8-28.1 5-2.9 5.5-3.4 5.9-6.5.3-2.2-1.6-5.6-3.5-6.2z" fill="#0678a2"/>
+                        </svg>
+                    </div>
                     <h3>CONTEO</h3>
                     <p>Digitalización de inventarios físicos con escaneo de códigos de barras</p>
                     <ul class="app-features">
@@ -761,17 +794,32 @@
                     
                     <!-- Apps Móviles -->
                     <div class="mobile-app app-gastos">
-                        <div class="app-icon">💰</div>
+                        <div class="app-icon">
+                            <svg width="24" height="24" viewBox="0 0 285 285">
+                                <rect id="AppIcon" x="0" y="0" width="284.444" height="284.444" style="fill:#1e3d9b;"/>
+                                <g><path d="M110.238,76.42c-16.821,2.044 -29.449,9.057 -33.408,18.502c-0.543,1.242 -0.595,1.863 -0.621,4.917c-0,3.209 0.078,3.623 0.699,5.098c3.131,7.349 11.851,13.171 24.324,16.225c6.289,1.553 8.928,1.811 17.933,1.811c7.324,0.026 8.695,-0.051 11.904,-0.569c15.319,-2.432 26.421,-8.798 29.94,-17.131c0.673,-1.604 0.828,-2.38 0.932,-4.528c0.233,-5.098 -1.087,-8.255 -5.253,-12.447c-1.449,-1.475 -3.494,-3.209 -4.658,-3.985c-6.107,-3.96 -14.75,-6.832 -23.911,-7.893c-3.985,-0.466 -14.026,-0.466 -17.881,-0Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M76.131,121.628c0.104,4.684 0.13,5.098 0.777,6.599c3.597,8.539 14.801,14.957 30.406,17.415c1.811,0.311 5.304,0.595 7.711,0.699l4.399,0.155l1.398,-2.821c2.173,-4.425 4.916,-8.436 8.203,-11.981l1.527,-1.656l-1.941,0.207c-19.978,2.044 -39.412,-2.562 -50.746,-12.085l-1.837,-1.552l0.103,5.02Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M160.569,123.284c-6.987,1.061 -13.249,3.416 -18.631,7.064c-9.265,6.211 -15.501,15.527 -18.037,26.861c-0.518,2.226 -0.569,3.287 -0.569,8.617c-0,5.331 0.051,6.392 0.569,8.618c2.536,11.386 8.824,20.676 18.166,26.938c4.554,3.079 8.876,4.917 14.647,6.262c2.924,0.699 3.39,0.751 9.16,0.725c5.331,-0 6.392,-0.052 8.643,-0.569c17.079,-3.83 29.501,-16.251 33.33,-33.356c0.518,-2.226 0.57,-3.287 0.57,-8.618c-0,-5.33 -0.052,-6.391 -0.57,-8.617c-3.804,-17.079 -16.251,-29.552 -33.226,-33.33c-1.915,-0.44 -3.52,-0.543 -7.841,-0.621c-2.976,-0.052 -5.771,-0.026 -6.211,0.026Zm9.187,19.693l0.026,4.347l1.345,0.621c3.002,1.423 5.771,5.305 6.056,8.54l0.155,1.578l-7.582,0l-0,-0.724c-0,-1.734 -1.76,-3.157 -3.882,-3.157c-2.458,-0 -3.881,1.423 -3.881,3.829c-0,2.692 1.216,3.727 4.761,4.167c4.347,0.517 7.763,2.924 9.549,6.676c0.776,1.656 0.828,1.915 0.828,4.736c-0,2.872 -0.026,3.053 -0.88,4.787c-1.087,2.2 -3.235,4.451 -5.124,5.331l-1.345,0.621l-0.026,4.321l-0,4.348l-7.763,-0l-0,-4.348l-0.026,-4.321l-1.346,-0.621c-3.028,-1.424 -5.771,-5.279 -6.055,-8.566l-0.156,-1.552l7.583,-0l-0,0.698c-0,1.76 1.759,3.183 3.881,3.183c2.459,0 3.882,-1.423 3.882,-3.855c-0,-1.579 -0.595,-2.769 -1.734,-3.442c-0.388,-0.233 -1.76,-0.544 -3.028,-0.699c-4.347,-0.517 -7.763,-2.924 -9.548,-6.676c-0.777,-1.656 -0.828,-1.915 -0.828,-4.736c-0,-2.82 0.051,-3.079 0.828,-4.735c1.009,-2.148 3.26,-4.477 5.175,-5.383l1.346,-0.621l0.026,-4.347l-0,-4.322l7.763,0l-0,4.322Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M76.08,144.271c-0,4.709 0.232,6.029 1.397,8.358c2.846,5.667 9.6,10.532 18.865,13.586c5.227,1.707 10.092,2.639 17.933,3.364l1.319,0.129l0.156,-5.253c0.103,-3.83 0.284,-5.926 0.672,-7.815c0.311,-1.423 0.544,-2.588 0.544,-2.614c-0,-0.026 -1.294,-0.103 -2.898,-0.207c-14.88,-0.905 -28,-5.408 -36.332,-12.473l-1.656,-1.423l-0,4.348Z" style="fill:#fff;fill-rule:nonzero;"/><path d="M76.131,168.181c0.104,4.71 0.13,5.124 0.777,6.625c3.597,8.539 14.698,14.905 30.406,17.441c2.406,0.388 5.046,0.57 9.729,0.673c3.52,0.078 6.392,0.052 6.392,-0.052c0,-0.103 -0.414,-0.88 -0.931,-1.708c-1.941,-3.208 -4.607,-9.678 -5.409,-13.197c-0.155,-0.673 -0.207,-0.673 -3.183,-0.854c-14.62,-0.854 -27.87,-5.434 -36.202,-12.499l-1.682,-1.423l0.103,4.994Z" style="fill:#fff;fill-rule:nonzero;"/></g>
+                            </svg>
+                        </div>
                         <div class="app-label">GASTOS</div>
                     </div>
                     
                     <div class="mobile-app app-nombres">
-                        <div class="app-icon">👥</div>
+                        <div class="app-icon">
+                            <svg width="24" height="24" viewBox="0 0 1024 1024">
+                                <rect id="AppIcon" x="0" y="0" width="1024" height="1024" style="fill:#20a09e;"/>
+                                <g><rect x="114" y="151" width="702" height="684" style="fill:#20a09e;"/><path d="M919.614,187.884l0,648.232c0,45.215 -36.709,81.924 -81.924,81.924l-664.818,0c-45.215,0 -81.924,-36.709 -81.924,-81.924l-0,-648.232c-0,-45.215 36.709,-81.924 81.924,-81.924l664.818,-0c45.215,-0 81.924,36.709 81.924,81.924Zm-787.614,118.127c-9.934,-0 -18,8.065 -18,18c0,9.934 8.066,18 18,18c9.934,-0 18,-8.066 18,-18c0,-9.935 -8.066,-18 -18,-18Zm0,465.726c-9.934,0 -18,8.066 -18,18c0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c0,-9.934 -8.066,-18 -18,-18Zm0,-116.431c-9.934,-0 -18,8.065 -18,18c0,9.934 8.066,18 18,18c9.934,-0 18,-8.066 18,-18c0,-9.935 -8.066,-18 -18,-18Zm0,-116.432c-9.934,0 -18,8.066 -18,18c0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c0,-9.934 -8.066,-18 -18,-18Zm489.267,-78.265c11.446,-15.215 18.233,-34.131 18.233,-54.62l0,-48.034c0,-50.215 -40.768,-90.983 -90.983,-90.983l-8.367,0c-50.215,0 -90.983,40.768 -90.983,90.983l-0,48.034c-0,19.758 6.311,38.054 17.027,52.979c0.019,0.054 0.043,0.108 0.073,0.163c1.4,10.066 1.066,6.1 0.866,23.5l-0.3,17.9l-15.5,8.4c-39,20.9 -74.9,43.8 -105.4,67.1c-16,12.2 -25.7,25.9 -30.8,43.7c-2.1,7.2 -2.3,9.9 -2.3,31.4l0,23.5l2.8,4.7c3.2,5.5 7.1,8.5 13.4,10.4c6.9,2.1 423.7,2.1 430.6,-0c6.3,-1.9 10.2,-4.9 13.4,-10.4l2.8,-4.7l0,-24.5c0,-22.6 -0.2,-25.1 -2.3,-32.5c-4.4,-15.2 -13.1,-28.3 -25.2,-38.2c-25.7,-20.8 -73.4,-51.4 -111.5,-71.4l-14,-7.4l-0.3,-20l-1.266,-20.022Zm-489.267,-271.03c-9.934,0 -18,8.066 -18,18c-0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c-0,-9.934 -8.066,-18 -18,-18Zm-0,232.863c-9.934,0 -18,8.066 -18,18c-0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c-0,-9.934 -8.066,-18 -18,-18Z" style="fill:#c8c3bd;"/><path d="M892.386,185.192l-0,626.932c-0,43.73 -35.503,79.233 -79.233,79.233l-642.973,-0c-43.729,-0 -79.232,-35.503 -79.232,-79.233l-0,-626.932c-0,-43.729 35.503,-79.232 79.232,-79.232l642.973,-0c43.73,-0 79.233,35.503 79.233,79.232Zm-760.386,353.682c-9.934,0 -18,8.066 -18,18c0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c0,-9.934 -8.066,-18 -18,-18Zm0,-349.295c-9.934,0 -18,8.066 -18,18c0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c0,-9.934 -8.066,-18 -18,-18Zm0,116.432c-9.934,-0 -18,8.065 -18,18c0,9.934 8.066,18 18,18c9.934,-0 18,-8.066 18,-18c0,-9.935 -8.066,-18 -18,-18Zm0,349.295c-9.934,-0 -18,8.065 -18,18c0,9.934 8.066,18 18,18c9.934,-0 18,-8.066 18,-18c0,-9.935 -8.066,-18 -18,-18Zm0,116.431c-9.934,0 -18,8.066 -18,18c0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c0,-9.934 -8.066,-18 -18,-18Zm489.267,-311.128c11.446,-15.215 18.233,-34.131 18.233,-54.62l0,-48.034c0,-50.215 -40.768,-90.983 -90.983,-90.983l-8.367,0c-50.215,0 -90.983,40.768 -90.983,90.983l-0,48.034c-0,19.758 6.311,38.054 17.027,52.979c0.019,0.054 0.043,0.108 0.073,0.163c1.4,10.066 1.066,6.1 0.866,23.5l-0.3,17.9l-15.5,8.4c-39,20.9 -74.9,43.8 -105.4,67.1c-16,12.2 -25.7,25.9 -30.8,43.7c-2.1,7.2 -2.3,9.9 -2.3,31.4l0,23.5l2.8,4.7c3.2,5.5 7.1,8.5 13.4,10.4c6.9,2.1 423.7,2.1 430.6,-0c6.3,-1.9 10.2,-4.9 13.4,-10.4l2.8,-4.7l0,-24.5c0,-22.6 -0.2,-25.1 -2.3,-32.5c-4.4,-15.2 -13.1,-28.3 -25.2,-38.2c-25.7,-20.8 -73.4,-51.4 -111.5,-71.4l-14,-7.4l-0.3,-20l-1.266,-20.022Zm-489.267,-38.167c-9.934,0 -18,8.066 -18,18c-0,9.935 8.066,18 18,18c9.934,0 18,-8.065 18,-18c-0,-9.934 -8.066,-18 -18,-18Z" style="fill:#fdf7ef;"/><rect x="183.18" y="105.96" width="34.153" height="785.397" style="fill:#e0ddd4;"/><path d="M121.667,779.42l-0,20.635l-44.683,-0c-5.694,-0 -10.317,-4.623 -10.317,-10.318c-0,-5.694 4.623,-10.317 10.317,-10.317l44.683,-0Z" style="fill:#c8c3bd;"/><path d="M121.667,662.988l-0,20.635l-44.683,0c-5.694,0 -10.317,-4.623 -10.317,-10.317c-0,-5.695 4.623,-10.318 10.317,-10.318l44.683,0Z" style="fill:#c8c3bd;"/><path d="M121.667,546.557l-0,20.634l-44.683,0c-5.694,0 -10.317,-4.623 -10.317,-10.317c-0,-5.694 4.623,-10.317 10.317,-10.317l44.683,-0Z" style="fill:#c8c3bd;"/><path d="M121.667,430.125l-0,20.635l-44.683,-0c-5.694,-0 -10.317,-4.623 -10.317,-10.318c-0,-5.694 4.623,-10.317 10.317,-10.317l44.683,0Z" style="fill:#c8c3bd;"/><path d="M121.667,313.694l-0,20.634l-44.683,0c-5.694,0 -10.317,-4.623 -10.317,-10.317c-0,-5.694 4.623,-10.317 10.317,-10.317l44.683,-0Z" style="fill:#c8c3bd;"/><path d="M121.667,197.262l-0,20.635l-44.683,-0c-5.694,-0 -10.317,-4.623 -10.317,-10.318c-0,-5.694 4.623,-10.317 10.317,-10.317l44.683,-0Z" style="fill:#c8c3bd;"/></g>
+                            </svg>
+                        </div>
                         <div class="app-label">NOMBRES</div>
                     </div>
                     
                     <div class="mobile-app app-conteo">
-                        <div class="app-icon">📊</div>
+                        <div class="app-icon">
+                            <svg width="24" height="24" viewBox="0 0 512 512">
+                                <rect id="AppIcon" x="0" y="0" width="512" height="512" style="fill:#e6f8ff;"/>
+                                <path d="M206.014,118.914c-4.425,0.523 -8.87,4.268 -10.248,8.533c-0.996,3.226 -5.952,59.934 -5.657,64.899c0.578,9.377 5.048,20.747 11.16,28.177c5.83,7.161 15.102,13.434 23.833,16.129c2.725,0.841 144.423,24.476 153.044,25.553c2.935,0.358 7.447,-1.234 9.773,-3.44l2.128,-1.963l10.039,-31.929c7.15,-22.77 10.077,-32.649 10.075,-34.416c0.131,-3.188 -1.466,-7.093 -3.817,-9.341c-1.77,-1.765 -3.328,-2.246 -100.096,-32.115c-80.546,-24.802 -98.655,-30.269 -100.234,-30.087Zm113.141,145.551c-26.976,-4.367 -49.315,-7.973 -49.648,-8.076c-0.852,-0.202 -6.509,32.532 -6.066,35.044c0.226,1.045 0.892,2.834 1.524,3.943c1.956,3.528 4.009,4.771 11.962,7.226l7.23,2.231l-10.112,32.76c-11.4,36.931 -11.301,36.413 -9.002,44.555c3.839,13.612 16.09,23.059 30.122,23.187c4.493,0.047 58.693,-8.992 61.206,-10.226c2.731,-1.35 5.477,-4.523 6.349,-7.544c0.429,-1.39 2.439,-27.635 4.423,-58.335c3.602,-54.689 3.65,-55.831 2.332,-56.299c-0.706,-0.279 -23.343,-4.099 -50.32,-8.466Zm-174.31,-155.643c-3.157,-4.01 -8.202,-2.501 -17.435,5.133c-10.145,8.405 -18.246,20.806 -22.599,34.707c-1.978,6.272 -3.459,21.16 -2.834,28.211c1.245,13.162 4.769,23.43 11.805,34.233c2.921,4.51 9.742,11.712 11.818,12.487c3.531,1.359 7.38,-0.938 7.828,-4.695c0.379,-3.179 -0.001,-3.927 -3.821,-7.782c-6.478,-6.634 -11.805,-16.531 -13.99,-26.229c-1.898,-8.667 -2.1,-12.384 -0.844,-22.434c0.965,-8.092 1.358,-9.921 3.28,-14.734c2.662,-6.6 8.112,-15.447 12.261,-19.759c2.87,-2.941 7.398,-6.505 13.001,-10.234c2.1,-1.391 2.386,-1.826 2.675,-4.254c0.269,-2.254 0.076,-3.098 -1.145,-4.65Zm17.133,16.579c-3.284,-0.978 -8.397,1.11 -14.872,6.259c-4.974,3.863 -7.614,6.831 -11.234,12.613c-3.97,6.269 -5.363,10.089 -6.681,18.197c-2.344,14.259 0.657,26.457 9.321,37.865c6.889,9.086 12.06,11.93 16.063,8.831c1.488,-1.171 1.938,-1.997 2.172,-3.962c0.269,-2.254 0.035,-2.751 -2.145,-5.121c-1.344,-1.508 -4.164,-4.893 -6.309,-7.552c-6.225,-7.775 -8.613,-16.267 -7.407,-26.382c1.439,-12.08 7.938,-21.857 18.767,-28.129c5.037,-2.917 5.511,-3.447 5.869,-6.452c0.268,-2.254 -1.621,-5.586 -3.544,-6.167Z" style="fill:#0678a2;"/>
+                            </svg>
+                        </div>
                         <div class="app-label">CONTEO</div>
                     </div>
                     
@@ -783,6 +831,127 @@
                         hacia los módulos correspondientes de SISGES®, manteniendo toda su información empresarial 
                         centralizada y actualizada.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="support-section" id="soporte" style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title">Acompañamiento Continuo</h2>
+            <p class="section-subtitle">
+                No solo te brindamos las herramientas, te acompañamos en cada paso de la transformación 
+                digital de tu empresa con soporte técnico especializado y capacitación permanente.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #e74c3c;">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);">
+                            <span style="font-size: 2rem; color: white;">🎯</span>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.4rem;">Implementación Guiada</h3>
+                    </div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Instalación y configuración personalizada de SISGES®
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Migración segura de datos desde sistemas existentes
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Configuración de aplicaciones móviles para tu equipo
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Establecimiento de flujos de trabajo optimizados
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #3498db;">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3498db, #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);">
+                            <span style="font-size: 2rem; color: white;">📚</span>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.4rem;">Capacitación Integral</h3>
+                    </div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Sesiones de entrenamiento personalizadas para tu equipo
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Manuales operativos y documentación completa
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Workshops prácticos sobre mejores prácticas contables
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Actualizaciones continuas sobre nuevas funcionalidades
+                        </li>
+                    </ul>
+                </div>
+                
+                <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #27ae60;">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #27ae60, #229954); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);">
+                            <span style="font-size: 2rem; color: white;">🛠️</span>
+                        </div>
+                        <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.4rem;">Soporte Técnico 24/7</h3>
+                    </div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Asistencia técnica remota inmediata
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Resolución de consultas por correo y WhatsApp
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Mantenimiento preventivo y actualizaciones de seguridad
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #27ae60; font-weight: bold;">✓</span>
+                            Respaldo y recuperación de datos empresariales
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 3rem; margin-top: 3rem; text-align: center; color: white;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: white;">🚀 Compromiso de Excelencia</h3>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    En Conta Solutions, entendemos que cada empresa es única. Por eso, nuestro acompañamiento se adapta 
+                    a tus necesidades específicas, asegurando que obtengas el máximo provecho de la plataforma SISGES® 
+                    y sus aplicaciones complementarias.
+                </p>
+                
+                <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #f1c40f;">100%</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Satisfacción Garantizada</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #f1c40f;">24/7</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Soporte Técnico</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #f1c40f;">🇧🇴</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Tecnología Boliviana</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; font-weight: bold; color: #f1c40f;">∞</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Actualizaciones Continuas</div>
+                    </div>
                 </div>
             </div>
         </div>
