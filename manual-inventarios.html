@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual SISMER - Sistema de Inventarios v.5 | Conta Solutions</title>
+    <meta name="description" content="Manual completo del sistema de inventarios SISMER v.5 - Control integral de mercaderías, compras, ventas y cobranzas.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .breadcrumb {
+            background: #34495e;
+            padding: 1rem 0;
+            color: #ecf0f1;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .manual-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .manual-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .version-info {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Table of Contents */
+        .toc-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .toc-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .toc-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-item a {
+            color: #27ae60;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 0.5rem;
+        }
+
+        .subsection {
+            margin-bottom: 3rem;
+        }
+
+        .subsection h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .process-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .process-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .process-card:hover {
+            border-color: #27ae60;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .process-card h4 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box h4 {
+            color: #b7791f;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border: 1px solid #b3d4fc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            color: #0c5460;
+            margin-bottom: 0.5rem;
+        }
+
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .field-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .field-card h5 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        /* Image Gallery */
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid .image-container {
+            margin: 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .nav-button.secondary {
+            background: #95a5a6;
+        }
+
+        .nav-button.secondary:hover {
+            background: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .manual-title {
+                font-size: 2rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .process-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CONTA SOLUTIONS</div>
+            <p>Documentación Técnica - SISGES®</p>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a> > <a href="#documentacion">Documentación</a> > Manual de Inventarios
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Header Section -->
+            <div class="header-section">
+                <h1 class="manual-title">📦 SISMER - Sistema de Inventarios</h1>
+                <p class="manual-subtitle">Control Integral de Comercialización y Mercaderías</p>
+                <div class="version-info">
+                    <strong>Versión 5.0</strong> | Sistema de Control de Gestión SISGES®
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc-section">
+                <h2 class="toc-title">📋 Contenido del Manual</h2>
+                <div class="toc-grid">
+                    <div class="toc-item">
+                        <h4>👥 Gestión de Clientes</h4>
+                        <p><a href="#clientes">Registro y catastro de clientes</a></p>
+                    </div>
+                    <div class="toc-item">
+                        <h4>📥 Compras a Proveedores</h4>
+                        <p><a href="#compras">Ingreso de mercaderías y costeo FIFO</a></p>
+                    </div>
+                    <div class="toc-item">
+                        <h4>📤 Notas de Remisión</h4>
+                        <p><a href="#remisiones">Salidas de productos sin facturación</a></p>
+                    </div>
+                    <div class="toc-item">
+                        <h4>💼 Módulo de Cobranzas</h4>
+                        <p><a href="#cobranzas">Control de créditos y pagos</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="content-section">
+                <section id="introduccion">
+                    <h2 class="section-title">🏢 Introducción al Sistema</h2>
+
+                    <div class="highlight-box">
+                        <h3>Sistema de Inventarios SISMER v.5</h3>
+                        <p>
+                            SISMER es el módulo de control de inventarios de la plataforma SISGES®, diseñado para ejercer
+                            un control integral del proceso de comercialización: ingresos por producción/compras y
+                            egresos por ventas/remisiones.
+                        </p>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images/manuales/inventarios_01_menu_principal.jpg" alt="Menú Principal del Sistema de Inventarios">
+                        <div class="image-caption">
+                            <strong>Figura 1:</strong> Pantalla principal del Sistema de Inventarios v.5 SISMER mostrando las opciones de ARCHIVOS PRINCIPALES, MOVIMIENTO INVENTARIO y MÓDULO COBRANZAS
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🎯 Características Principales</h3>
+                        <ul class="feature-list">
+                            <li><strong>Sistema de Costeo FIFO:</strong> El primero en entrar es el primero en salir</li>
+                            <li><strong>Libro de Compras IVA:</strong> Activación automática con numeración de facturas</li>
+                            <li><strong>Gestión de Clientes:</strong> Catastro completo con zonificación y sectorización</li>
+                            <li><strong>Control de Proveedores:</strong> Integración con plan de cuentas contable</li>
+                            <li><strong>Módulo de Cobranzas:</strong> Control de ventas al crédito y pagos</li>
+                            <li><strong>Reportes Integrales:</strong> Kardex, existencias, estados de cuenta</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>🔄 Integración con SISGES®</h4>
+                        <p>
+                            Todas las transacciones de inventario se integran automáticamente con la contabilidad,
+                            actualizando cuentas de inventarios, proveedores, clientes y resultados.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="navegacion">
+                    <h2 class="section-title">🧭 Navegación del Sistema</h2>
+
+                    <div class="subsection">
+                        <h3>⌨️ Teclas de Función Universal</h3>
+
+                        <div class="field-grid">
+                            <div class="field-card">
+                                <h5>[Enter]</h5>
+                                <p>Avanza entre campos de izquierda a derecha y de arriba hacia abajo</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>[F1] - Ayuda</h5>
+                                <p>Búsqueda de códigos por denominación o descripción</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>[F2] - Retroceso</h5>
+                                <p>Navegación inversa entre campos para correcciones</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>[Esc] - Salida</h5>
+                                <p>Abandono del programa actual y retorno al menú</p>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ Importante</h4>
+                            <p>
+                                Hasta que el sistema no requiera confirmación de grabación en la línea de mensajes,
+                                todas las acciones anteriores no alteran los archivos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="clientes">
+                    <h2 class="section-title">👥 Gestión de Clientes</h2>
+
+                    <div class="subsection">
+                        <h3>🎯 Objetivo</h3>
+                        <p>
+                            Habilitar, modificar y/o eliminar el catastro de clientes. Esta registración es obligatoria
+                            si el sistema es habilitado con la gestión de cobranza.
+                        </p>
+
+                        <div class="field-grid">
+                            <div class="field-card">
+                                <h5>🔢 Código</h5>
+                                <p>Campo numérico generado automáticamente para identificar persona natural o jurídica</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>👤 Nombre o Razón Social</h5>
+                                <p>Campo alfanumérico de 40 posiciones. Formato: Paterno, Materno y Nombres</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📍 Lugar</h5>
+                                <p>Campo numérico de 2 posiciones para zonificación de clientes</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>🏭 Sector</h5>
+                                <p>Campo numérico de 2 posiciones para sectorización productiva</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📄 N.I.T.</h5>
+                                <p>Número Interno de Tributación (12 posiciones) para Libros IVA</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📞 Contacto</h5>
+                                <p>Información de contacto: teléfono, celular, email, dirección</p>
+                            </div>
+                        </div>
+
+                        <div class="image-grid">
+                            <div class="image-container">
+                                <img src="images/manuales/inventarios_02_proceso_clientes.jpg" alt="Pantalla de Proceso de Clientes">
+                                <div class="image-caption">
+                                    <strong>Figura 2:</strong> Pantalla de captura de clientes con campos de código, nombre, lugar, sector, N.I.T. y datos de contacto
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img src="images/manuales/inventarios_03_consulta_codigos_clientes.jpg" alt="Consulta de Códigos de Clientes">
+                                <div class="image-caption">
+                                    <strong>Figura 3:</strong> Sistema de búsqueda universal para localizar clientes por criterios de búsqueda alfanuméricos
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>🔍 Sistema de Búsqueda Universal</h4>
+                            <p>
+                                El sistema incluye una herramienta de búsqueda exclusiva que permite ubicar códigos
+                                por criterios no mayores a 10 caracteres alfanuméricos, recuperando todas las
+                                denominaciones que coinciden parcial o totalmente.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="compras">
+                    <h2 class="section-title">📥 Ingreso de Proveedores</h2>
+
+                    <div class="subsection">
+                        <h3>🎯 Objetivo</h3>
+                        <p>
+                            Habilitar, modificar y/o eliminar el ingreso de mercaderías al sistema por concepto de
+                            compras, importaciones u otros que contienen precio de costo.
+                        </p>
+
+                        <div class="warning-box">
+                            <h4>💰 Sistema de Costeo FIFO</h4>
+                            <p>
+                                El sistema adopta el método FIFO (PEPS): el primero en entrar es el primero en salir,
+                                sea por fecha de compra o vencimiento del producto.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>📋 Estructura de Transacciones</h3>
+
+                        <div class="process-flow">
+                            <div class="process-card">
+                                <h4>📄 Parte Documentaria</h4>
+                                <ul class="feature-list">
+                                    <li>Fecha de transacción</li>
+                                    <li>Concepto y referencias</li>
+                                    <li>Documentos de respaldo</li>
+                                    <li>Valores totales y descuentos</li>
+                                </ul>
+                            </div>
+                            <div class="process-card">
+                                <h4>💼 Parte Transaccional</h4>
+                                <ul class="feature-list">
+                                    <li>Código de producto</li>
+                                    <li>Cantidad y unidades</li>
+                                    <li>Precios de costo y venta</li>
+                                    <li>Subtotales por ítem</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🏪 Campos de Compra</h3>
+
+                        <div class="field-grid">
+                            <div class="field-card">
+                                <h5>🏢 Empresa/Lugar</h5>
+                                <p>Código de almacén (11-99), números inferiores reservados para producción</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📅 Fecha</h5>
+                                <p>Campo no digitable, recupera fecha del sistema automáticamente</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>🏭 Proveedor</h5>
+                                <p>Código contable de 8 posiciones del plan de cuentas SISCON</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📄 No. Factura</h5>
+                                <p>Documento de referencia alfanumérico de 10 posiciones</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>⏰ Vencimiento</h5>
+                                <p>Fecha para integración con módulo de cobranza de acreedores</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>💱 T/C</h5>
+                                <p>Tipo de cambio. Valor 1 para facturas en Bolivianos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images/manuales/inventarios_04_ingreso_proveedor.jpg" alt="Pantalla de Ingreso de Proveedor">
+                        <div class="image-caption">
+                            <strong>Figura 4:</strong> Pantalla de ingreso de mercaderías mostrando proveedor, factura, vencimiento, T/C y detalle de productos con cantidades y precios
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>📦 Creación de Productos</h3>
+
+                        <div class="info-box">
+                            <h4>🆕 Nueva Mercadería [F7]</h4>
+                            <p>
+                                El sistema permite crear nuevos códigos de productos durante el proceso de compra,
+                                con numeración automática y ascendente de hasta un millón de posibilidades.
+                            </p>
+                        </div>
+
+                        <div class="field-grid">
+                            <div class="field-card">
+                                <h5>🔢 Código</h5>
+                                <p>6 posiciones numéricas, generación automática por el sistema</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📝 Descripción</h5>
+                                <p>Denominación del producto, campo alfanumérico de 35 posiciones</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📏 U/M</h5>
+                                <p>Unidad de Medida abreviada de 3 posiciones (Pza, Kg, Lt, etc.)</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📊 Línea</h5>
+                                <p>Clasificación genérica de productos por categoría (2 dígitos)</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>🏠 Propiedad</h5>
+                                <p>1=Mercadería Propia, 2=En Consignación</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>💰 Moneda</h5>
+                                <p>1=Bolivianos, 2=Dólares (recomendado crear todo en Bs.)</p>
+                            </div>
+                        </div>
+
+                        <div class="image-container">
+                            <img src="images/manuales/inventarios_05_creacion_mercaderias.jpg" alt="Pantalla de Creación de Mercaderías">
+                            <div class="image-caption">
+                                <strong>Figura 5:</strong> Pantalla de creación de nuevos productos con código, descripción, U/M, línea, propiedad y moneda
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>💲 Gestión de Precios</h3>
+
+                        <div class="field-grid">
+                            <div class="field-card">
+                                <h5>💰 Precio de Costo</h5>
+                                <p>6 posiciones enteras y 2 decimales. Opción (P)recio o (S)ubtotal</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>🏷️ Precio de Venta</h5>
+                                <p>Calculado automáticamente con porcentaje de ganancia parametrizado</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📦 Precio por Mayor</h5>
+                                <p>Precio alternativo con porcentaje diferenciado</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>📦 Precio por Caja</h5>
+                                <p>Precio para ventas al por mayor</p>
+                            </div>
+                            <div class="field-card">
+                                <h5>🔥 Precio de Liquidación</h5>
+                                <p>Precio especial para liquidación de inventarios</p>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4>⚠️ Control de Totales</h4>
+                            <p>
+                                Los totales de control deben corresponder al valor total del documento.
+                                Este valor se utiliza en el libro de compras y control de cobranzas.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="remisiones">
+                    <h2 class="section-title">📤 Notas de Remisión</h2>
+
+                    <div class="subsection">
+                        <h3>🎯 Objetivo</h3>
+                        <p>
+                            Habilitar, modificar y/o eliminar las salidas de productos por cualquier concepto
+                            menos ventas facturadas.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>Transferencias entre almacenes</li>
+                            <li>Muestras y degustaciones</li>
+                            <li>Devoluciones y garantías</li>
+                            <li>Mermas y ajustes de inventario</li>
+                            <li>Préstamos temporales</li>
+                        </ul>
+
+                        <div class="image-container">
+                            <img src="images/manuales/inventarios_06_nota_remision.jpg" alt="Pantalla de Nota de Remisión">
+                            <div class="image-caption">
+                                <strong>Figura 6:</strong> Pantalla de nota de remisión para salidas de productos sin facturación, con cliente, fecha y detalle de productos
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>🔄 Integración Automática</h4>
+                            <p>
+                                Todas las remisiones actualizan automáticamente los saldos de inventario
+                                y se reflejan en los reportes de existencias y kardex de productos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cobranzas">
+                    <h2 class="section-title">💼 Módulo de Cobranzas</h2>
+
+                    <div class="subsection">
+                        <h3>🎯 Características</h3>
+
+                        <div class="process-flow">
+                            <div class="process-card">
+                                <h4>📊 Control de Créditos</h4>
+                                <ul class="feature-list">
+                                    <li>Límites de crédito por cliente</li>
+                                    <li>Análisis de vencimientos</li>
+                                    <li>Estados de cuenta detallados</li>
+                                    <li>Reportes de morosidad</li>
+                                </ul>
+                            </div>
+                            <div class="process-card">
+                                <h4>💰 Gestión de Pagos</h4>
+                                <ul class="feature-list">
+                                    <li>Registro de abonos parciales</li>
+                                    <li>Aplicación automática de pagos</li>
+                                    <li>Control de descuentos</li>
+                                    <li>Histórico de transacciones</li>
+                                </ul>
+                            </div>
+                            <div class="process-card">
+                                <h4>📈 Reportes Gerenciales</h4>
+                                <ul class="feature-list">
+                                    <li>Análisis de cartera por antigüedad</li>
+                                    <li>Proyección de flujos de caja</li>
+                                    <li>Indicadores de gestión</li>
+                                    <li>Alertas de vencimiento</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="reportes">
+                    <h2 class="section-title">📊 Sistema de Reportes</h2>
+
+                    <div class="toc-grid">
+                        <div class="toc-item">
+                            <h4>📋 Lista de Clientes</h4>
+                            <p>Catálogo completo con datos de contacto y clasificación</p>
+                        </div>
+                        <div class="toc-item">
+                            <h4>📦 Lista de Existencias</h4>
+                            <p>Inventario actual con cantidades y valores</p>
+                        </div>
+                        <div class="toc-item">
+                            <h4>📈 Kardex de Productos</h4>
+                            <p>Movimientos detallados por producto con entradas y salidas</p>
+                        </div>
+                        <div class="toc-item">
+                            <h4>📊 Estado de Clientes</h4>
+                            <p>Saldos y movimientos de cuentas por cobrar</p>
+                        </div>
+                        <div class="toc-item">
+                            <h4>📈 Ecuación de Inventario</h4>
+                            <p>Análisis de rotación y valorización de inventarios</p>
+                        </div>
+                        <div class="toc-item">
+                            <h4>📋 Libro de Ventas</h4>
+                            <p>Registro cronológico de todas las transacciones de venta</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>🎯 Características de los Reportes</h3>
+                        <p>
+                            Todos los reportes incluyen filtros por fecha, cliente, producto, y almacén.
+                            Generación automática con opciones de exportación y formatos personalizables.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Navigation -->
+                <div class="navigation-buttons">
+                    <a href="manual-contabilidad.html" class="nav-button secondary">← Manual de Contabilidad</a>
+                    <a href="index.html" class="nav-button">Volver al Inicio →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container">
+            <p>&copy; 2025 Conta Solutions. Documentación SISGES® v.5.0</p>
+            <p>Sistema de Control de Gestión - Tecnología Boliviana</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual SISCON - Sistema de Contabilidad v.5 | Conta Solutions</title>
+    <meta name="description" content="Manual completo del sistema de contabilidad SISCON v.5 - Control contable integral con asientos, reportes y gestión presupuestaria.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .breadcrumb {
+            background: #34495e;
+            padding: 1rem 0;
+            color: #ecf0f1;
+        }
+
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .manual-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .manual-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .version-info {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Table of Contents */
+        .toc-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .toc-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .toc-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-item a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .subsection {
+            margin-bottom: 3rem;
+        }
+
+        .subsection h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .user-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .user-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .user-card:hover {
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .user-card h4 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        /* Image Gallery */
+        .image-container {
+            text-align: center;
+            margin: 2rem 0;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .image-grid .image-container {
+            margin: 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .nav-button.secondary {
+            background: #95a5a6;
+        }
+
+        .nav-button.secondary:hover {
+            background: #7f8c8d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .manual-title {
+                font-size: 2rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .user-levels {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">CONTA SOLUTIONS</div>
+            <p>Documentación Técnica - SISGES®</p>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a> > <a href="#documentacion">Documentación</a> > Manual de Contabilidad
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Header Section -->
+            <div class="header-section">
+                <h1 class="manual-title">📊 SISCON - Sistema de Contabilidad</h1>
+                <p class="manual-subtitle">Control Integral de Gestión Contable y Presupuestaria</p>
+                <div class="version-info">
+                    <strong>Versión 5.1</strong> | Sistema de Control de Gestión SISGES®
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc-section">
+                <h2 class="toc-title">📋 Contenido del Manual</h2>
+                <div class="toc-grid">
+                    <div class="toc-item">
+                        <h4>🔐 Control de Acceso</h4>
+                        <p><a href="#acceso">Niveles de usuario y seguridad</a></p>
+                    </div>
+                    <div class="toc-item">
+                        <h4>📈 Plan de Cuentas</h4>
+                        <p><a href="#plan-cuentas">Gestión del catálogo contable</a></p>
+                    </div>
+                    <div class="toc-item">
+                        <h4>📝 Asientos Contables</h4>
+                        <p><a href="#asientos">Captura simple y múltiple</a></p>
+                    </div>
+                    <div class="toc-item">
+                        <h4>📊 Reportes Financieros</h4>
+                        <p><a href="#reportes">Estados e informes contables</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="content-section">
+                <section id="introduccion">
+                    <h2 class="section-title">🏢 Introducción al Sistema</h2>
+
+                    <div class="highlight-box">
+                        <h3>Sistema de Control de Gestión SISCON</h3>
+                        <p>
+                            SISCON es el núcleo contable de la plataforma SISGES®, diseñado para brindar control integral
+                            sobre la gestión financiera empresarial con herramientas profesionales de contabilidad
+                            y presupuestos.
+                        </p>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images/manuales/contabilidad_01_menu_principal.jpg" alt="Menú Principal del Sistema de Control de Gestión">
+                        <div class="image-caption">
+                            <strong>Figura 1:</strong> Pantalla principal del Sistema de Control de Gestión mostrando las opciones de CONTABILIDAD-PRESUPUESTOS, INVENTARIOS-COBRANZAS y CONTROL ADMINISTRATIVO
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🎯 Características Principales</h3>
+                        <ul class="feature-list">
+                            <li><strong>Plan de Cuentas Dinámico:</strong> Estructura jerárquica de 5 niveles con códigos de 8 dígitos</li>
+                            <li><strong>Asientos Contables:</strong> Captura simple (hasta 10 apropiaciones) y múltiple (hasta 99)</li>
+                            <li><strong>Control de Usuarios:</strong> 4 niveles de acceso con permisos diferenciados</li>
+                            <li><strong>Reportes Integrales:</strong> Balance General, Estado de Resultados, Libro Diario</li>
+                            <li><strong>Control de Cambio:</strong> Manejo automático de tipos de cambio</li>
+                            <li><strong>Integración Total:</strong> Compatible con módulos de inventarios y cobranzas</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="acceso">
+                    <h2 class="section-title">🔐 Sistema de Control de Acceso</h2>
+
+                    <p>
+                        El sistema implementa un control de acceso de 4 niveles que garantiza la seguridad
+                        y el control sobre las operaciones contables.
+                    </p>
+
+                    <div class="image-container">
+                        <img src="images/manuales/contabilidad_02_control_acceso.jpg" alt="Pantalla de Control de Acceso al Sistema">
+                        <div class="image-caption">
+                            <strong>Figura 2:</strong> Pantalla de control de acceso donde se solicita Usuario, Clave, Fecha y Tipo de Cambio para ingresar al sistema contable
+                        </div>
+                    </div>
+
+                    <div class="user-levels">
+                        <div class="user-card">
+                            <h4>👤 Usuario 1: Ejecutivo</h4>
+                            <ul class="feature-list">
+                                <li>Máximo nivel del sistema</li>
+                                <li>Adiciones, modificaciones y eliminaciones</li>
+                                <li>Habilitación de tipos de cambio</li>
+                                <li>Control de fechas de trabajo</li>
+                                <li>Acceso a todos los procedimientos</li>
+                            </ul>
+                        </div>
+
+                        <div class="user-card">
+                            <h4>👤 Usuario 2: Administrador</h4>
+                            <ul class="feature-list">
+                                <li>Adición y modificación de datos</li>
+                                <li>Emisión de estados financieros</li>
+                                <li>Reportes de consistencia y control</li>
+                                <li>Sin permisos de eliminación</li>
+                            </ul>
+                        </div>
+
+                        <div class="user-card">
+                            <h4>👤 Usuario 3: Supervisor</h4>
+                            <ul class="feature-list">
+                                <li>Supervisión técnica del sistema</li>
+                                <li>Integridad de bases de datos</li>
+                                <li>Protección y mantenimiento</li>
+                                <li>Nivel técnico especializado</li>
+                            </ul>
+                        </div>
+
+                        <div class="user-card">
+                            <h4>👤 Usuario 4+: Transcriptor</h4>
+                            <ul class="feature-list">
+                                <li>Adición de datos únicamente</li>
+                                <li>Reportes de control básicos</li>
+                                <li>Hasta 99 niveles disponibles</li>
+                                <li>Operaciones limitadas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images/manuales/contabilidad_03_menu_sistema_contabilidad.jpg" alt="Menú Principal del Sistema de Contabilidad">
+                        <div class="image-caption">
+                            <strong>Figura 3:</strong> Pantalla principal del sistema contable con todas las opciones organizadas en ARCHIVOS PRINCIPALES, ARCHIVO DE ASIENTOS y OPCIONALES
+                        </div>
+                    </div>
+                </section>
+
+                <section id="plan-cuentas">
+                    <h2 class="section-title">📈 Gestión del Plan de Cuentas</h2>
+
+                    <div class="subsection">
+                        <h3>🏗️ Estructura del Código Contable</h3>
+                        <p>El sistema utiliza códigos de 8 dígitos organizados en 5 niveles jerárquicos:</p>
+
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h4>Estructura: G-S-My-An-Sa</h4>
+                            <ul class="feature-list">
+                                <li><strong>Grupo (G):</strong> 1er. Nivel, 1 dígito (1-4)</li>
+                                <li><strong>SubGrupo (S):</strong> 2do. Nivel, 1 dígito (1-9)</li>
+                                <li><strong>Mayor (My):</strong> 3er. Nivel, 2 dígitos (1-99)</li>
+                                <li><strong>Analítica (An):</strong> 4to. Nivel, 2 dígitos (1-99)</li>
+                                <li><strong>SubAnalítica (Sa):</strong> 5to. Nivel, 2 dígitos (1-99)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>⚙️ Campos del Plan de Cuentas</h3>
+                        <ul class="feature-list">
+                            <li><strong>Descripción:</strong> Denominación de la cuenta (50 caracteres)</li>
+                            <li><strong>Nivel:</strong> Posición jerárquica automática (1-5)</li>
+                            <li><strong>Actividad:</strong> Cuenta apropiable (2) o de totalización (1)</li>
+                            <li><strong>Lugar:</strong> Posición en reportes financieros (1-99)</li>
+                        </ul>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images/manuales/contabilidad_04_plan_cuentas.jpg" alt="Pantalla del Proceso de Plan de Cuentas">
+                        <div class="image-caption">
+                            <strong>Figura 4:</strong> Pantalla de captura del Plan de Cuentas mostrando la estructura de códigos G-S-My-An-Sa, descripción, nivel, actividad y lugar
+                        </div>
+                    </div>
+                </section>
+
+                <section id="asientos">
+                    <h2 class="section-title">📝 Captura de Asientos Contables</h2>
+
+                    <div class="subsection">
+                        <h3>📄 Asientos Simples (CONMAT1)</h3>
+                        <p><strong>Objetivo:</strong> Capturar asientos contables con máximo 10 apropiaciones</p>
+
+                        <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                            <h4>Tipos de Comprobantes:</h4>
+                            <ul class="feature-list">
+                                <li><strong>1. Ingreso:</strong> Comprobantes de ingresos</li>
+                                <li><strong>2. Egreso:</strong> Comprobantes de gastos</li>
+                                <li><strong>3. Diario:</strong> Comprobantes de traspaso</li>
+                            </ul>
+                        </div>
+
+                        <h4>Componentes del Asiento:</h4>
+                        <ul class="feature-list">
+                            <li><strong>Parte Documentaria:</strong> Fecha, concepto, referencias, montos</li>
+                            <li><strong>Parte Transaccional:</strong> Cuentas, débitos, créditos, glosas</li>
+                        </ul>
+
+                        <div class="image-grid">
+                            <div class="image-container">
+                                <img src="images/manuales/contabilidad_05_documento_ingreso.jpg" alt="Pantalla de Documento de Ingreso">
+                                <div class="image-caption">
+                                    <strong>Figura 5:</strong> Parte documentaria del asiento mostrando tipo de documento, monto, concepto, fecha y cuenta corriente
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img src="images/manuales/contabilidad_06_comprobante_contable.jpg" alt="Pantalla de Comprobante Contable">
+                                <div class="image-caption">
+                                    <strong>Figura 6:</strong> Parte transaccional con apropiaciones, cuentas, debe, haber y control de cuadratura
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>📋 Asientos Múltiples (CONMAT0)</h3>
+                        <p><strong>Objetivo:</strong> Capturar asientos contables con 11 a 99 apropiaciones</p>
+
+                        <ul class="feature-list">
+                            <li>Proceso lineal por apropiación</li>
+                            <li>Glosa diferente por cada movimiento</li>
+                            <li>Ideal para liquidaciones de planilla</li>
+                            <li>Asientos únicos por día</li>
+                            <li>Control automático de cuadratura</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="reportes">
+                    <h2 class="section-title">📊 Sistema de Reportes</h2>
+
+                    <div class="subsection">
+                        <h3>📑 Reportes Principales</h3>
+
+                        <div class="toc-grid">
+                            <div class="toc-item">
+                                <h4>📋 Plan de Cuentas (CONREM1)</h4>
+                                <p>Listado completo del catálogo contable con saldos y niveles</p>
+                            </div>
+                            <div class="toc-item">
+                                <h4>📖 Libro Diario (CONRET1p)</h4>
+                                <p>Registro cronológico de todas las transacciones contables</p>
+                            </div>
+                            <div class="toc-item">
+                                <h4>📊 Mayor Analítico (CONRET2b)</h4>
+                                <p>Movimientos detallados por cuenta con saldos acumulados</p>
+                            </div>
+                            <div class="toc-item">
+                                <h4>⚖️ Balance de Comprobación (CONREM5p)</h4>
+                                <p>Verificación de saldos deudores y acreedores</p>
+                            </div>
+                            <div class="toc-item">
+                                <h4>💰 Estado de Resultados (CONREM3)</h4>
+                                <p>Análisis de ingresos y gastos por período</p>
+                            </div>
+                            <div class="toc-item">
+                                <h4>🏛️ Balance General (CONREM4)</h4>
+                                <p>Estado de situación financiera con activos, pasivos y patrimonio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="images/manuales/contabilidad_09_detalle_comprobante.jpg" alt="Detalle de Comprobante con Contenido">
+                        <div class="image-caption">
+                            <strong>Figura 9:</strong> Vista detallada de un comprobante múltiple mostrando todas las apropiaciones, conceptos y totales de control
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>🎯 Características de los Reportes</h3>
+                        <p>
+                            Todos los reportes incluyen filtros por fecha, nivel de detalle, y formato de moneda.
+                            Generación automática con encabezados personalizables y control de paginación.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="funciones-especiales">
+                    <h2 class="section-title">⚡ Funcionalidades Especiales</h2>
+
+                    <div class="subsection">
+                        <h3>🔧 Herramientas del Sistema</h3>
+                        <ul class="feature-list">
+                            <li><strong>Interconexión de Programas:</strong> Creación directa de cuentas desde asientos</li>
+                            <li><strong>Sistema de Ayuda (F1):</strong> Búsqueda inteligente de códigos</li>
+                            <li><strong>Control de Cuadratura:</strong> Verificación automática de débitos y créditos</li>
+                            <li><strong>Manejo de Tipos de Cambio:</strong> Conversión automática de monedas</li>
+                            <li><strong>Control de Fechas:</strong> Validación de períodos contables</li>
+                            <li><strong>Resguardo de Datos:</strong> Procedimientos obligatorios diarios</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h3>🔍 Sistema de Búsqueda Avanzada</h3>
+                        <p>
+                            El sistema incluye una potente herramienta de búsqueda que permite localizar
+                            cuentas por criterios parciales de descripción, facilitando la navegación
+                            en catálogos extensos.
+                        </p>
+
+                        <div class="image-grid">
+                            <div class="image-container">
+                                <img src="images/manuales/contabilidad_07_consulta_codigos.jpg" alt="Pantalla de Consulta de Códigos">
+                                <div class="image-caption">
+                                    <strong>Figura 7:</strong> Sistema de búsqueda universal que permite localizar códigos por criterios alfanuméricos
+                                </div>
+                            </div>
+                            <div class="image-container">
+                                <img src="images/manuales/contabilidad_08_documento_egreso.jpg" alt="Comprobante de Egreso">
+                                <div class="image-caption">
+                                    <strong>Figura 8:</strong> Ejemplo de comprobante de egreso con múltiples apropiaciones y control automático
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Navigation -->
+                <div class="navigation-buttons">
+                    <a href="index.html" class="nav-button secondary">← Volver al Inicio</a>
+                    <a href="manual-inventarios.html" class="nav-button">Manual de Inventarios →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container">
+            <p>&copy; 2025 Conta Solutions. Documentación SISGES® v.5.1</p>
+            <p>Sistema de Control de Gestión - Tecnología Boliviana</p>
+        </div>
+    </footer>
+</body>
+</html>
