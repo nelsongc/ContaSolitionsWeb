@@ -52,18 +52,33 @@
             top: 0;
             z-index: 100;
         }
-        
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
         .nav-menu {
             display: flex;
             justify-content: center;
             list-style: none;
             flex-wrap: wrap;
         }
-        
+
         .nav-menu li {
             margin: 0 1rem;
         }
-        
+
         .nav-menu a {
             color: white;
             text-decoration: none;
@@ -71,7 +86,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-        
+
         .nav-menu a:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
@@ -467,22 +482,34 @@
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
+            .menu-toggle {
+                display: block;
+            }
+
             .nav-menu {
+                display: none;
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
             }
-            
+
+            .nav-menu.active {
+                display: flex;
+            }
+
             .nav-menu li {
                 margin: 0.25rem 0;
+                width: 100%;
+                text-align: center;
             }
             
             /* Orbital system mobile adjustments */
@@ -561,15 +588,16 @@
 
     <nav>
         <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#plataforma">Plataforma</a></li>
-                <li><a href="#sisges">SISGES®</a></li>
-                <li><a href="#apps">Aplicaciones</a></li>
-                <li><a href="#integracion">Integración</a></li>
-                <li><a href="#documentacion">Documentación</a></li>
-                <li><a href="#soporte">Soporte</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#plataforma" onclick="closeMenu()">Plataforma</a></li>
+                <li><a href="#sisges" onclick="closeMenu()">SISGES®</a></li>
+                <li><a href="#apps" onclick="closeMenu()">Aplicaciones</a></li>
+                <li><a href="#integracion" onclick="closeMenu()">Integración</a></li>
+                <li><a href="#documentacion" onclick="closeMenu()">Documentación</a></li>
+                <li><a href="#soporte" onclick="closeMenu()">Soporte</a></li>
+                <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -686,16 +714,19 @@
                         <li>Reportes en tiempo real</li>
                         <li>Modo offline disponible</li>
                     </ul>
-                    <a href="https://play.google.com/store/apps/details?id=com.contasolutions.gastos" 
-                       target="_blank" 
-                       style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
-                       onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
-                       onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
-                        </svg>
-                        Descargar en Google Play
-                    </a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://play.google.com/store/apps/details?id=com.contasolutions.gastos"
+                           target="_blank"
+                           style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                           onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
+                           onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
+                            </svg>
+                            Descargar en Google Play
+                        </a>
+                        <img src="images/GastosQR.png" alt="QR Code Gastos" style="width: 120px; height: 120px; border: 2px solid white; border-radius: 8px; background: white; padding: 5px;">
+                    </div>
                 </div>
                 
                 <div class="app-card">
@@ -715,16 +746,19 @@
                         <li>Sincronización con SISGES®</li>
                         <li>Interfaz intuitiva</li>
                     </ul>
-                    <a href="https://play.google.com/store/apps/details?id=com.contasolutions.nombress" 
-                       target="_blank" 
-                       style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
-                       onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
-                       onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
-                        </svg>
-                        Descargar en Google Play
-                    </a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://play.google.com/store/apps/details?id=com.contasolutions.nombress"
+                           target="_blank"
+                           style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                           onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
+                           onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
+                            </svg>
+                            Descargar en Google Play
+                        </a>
+                        <img src="images/NombresQR.png" alt="QR Code Nombres" style="width: 120px; height: 120px; border: 2px solid white; border-radius: 8px; background: white; padding: 5px;">
+                    </div>
                 </div>
                 
                 <div class="app-card">
@@ -744,16 +778,19 @@
                         <li>Exportación premium a CSV</li>
                         <li>Integración con SISGES®</li>
                     </ul>
-                    <a href="https://play.google.com/store/apps/details?id=com.contasolutions.conteoo" 
-                       target="_blank" 
-                       style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
-                       onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
-                       onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
-                        </svg>
-                        Descargar en Google Play
-                    </a>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://play.google.com/store/apps/details?id=com.contasolutions.conteoo"
+                           target="_blank"
+                           style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.95); color: #000; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s; border: 1px solid rgba(0,0,0,0.1); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                           onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)'"
+                           onmouseout="this.style.background='rgba(255,255,255,0.95)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" fill="#4285F4"/>
+                            </svg>
+                            Descargar en Google Play
+                        </a>
+                        <img src="images/ConteoQR.png" alt="QR Code Conteo" style="width: 120px; height: 120px; border: 2px solid white; border-radius: 8px; background: white; padding: 5px;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -1088,5 +1125,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+
+            if (!nav.contains(event.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const navMenu = document.getElementById('navMenu');
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
